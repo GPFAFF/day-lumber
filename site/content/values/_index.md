@@ -1,5 +1,5 @@
 ---
-title: "Values"
+title: "About"
 image: /img/about-jumbotron.jpg
 values:
   - heading: "Lumber for your lumber"

@@ -13,7 +13,7 @@ products:
     text: We sell lumber, add more text.
   - image: /img/illustrations-coffee-gear.svg
     text: Add more lumber text.
-values:
-  heading: Our values
-  text: Why is day lumber great.
+about:
+  heading: About
+  text: What is day lumber about.
 ---
