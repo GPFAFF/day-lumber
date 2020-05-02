@@ -3,7 +3,8 @@ title: "Contact"
 logo: "/img/alternate-logo.svg"
 contact_entries:
   - heading: Location
-    text: "70 Orange Street, Chicopee, MA 01013"
+    text: "70 Orange Street"
+    text: "Chicopee, MA 01013"
   - heading: Hours of Operation
     text: "Monday – Friday: 8AM – 5PM"
 ---
