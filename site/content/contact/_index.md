@@ -1,6 +1,6 @@
 ---
 title: "Contact"
-logo: "/img/logo.svg"
+logo: "/img/alternate-logo.svg"
 contact_entries:
   - heading: Location
     text: "70 Orange Street, Chicopee, MA 01013"
