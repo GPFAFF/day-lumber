@@ -1,25 +1,31 @@
 ---
 title: "About"
-image: /img/about-jumbotron.jpg
+image: /img/pallets.png
 values:
-  - heading: "Lumber for your lumber"
+  - heading: "History"
     text: >
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    imageUrl: "/img/about-shade-grown.jpg"
-  - heading: "Responsibly sourced"
+      Day Lumber Corporation was incorporated in 1929 by Clarence Day. Clarence operated Day Lumber as a lumber and retail yard. In the mid 1950s, Peck Lumber Company purchased Day Lumber. Peck Lumber was a family business that owned timberlands, sawmills, and a planning mill. With over 90 years of industry experience, we pride ourselves on having the most knowledgeable and stable workforce in the industry.
+
+    imageUrl: "/img/day-truck.jpg"
+
+  - heading: "Customer service is our number one priority!"
     text: >
-     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    imageUrl: "/img/about-single-origin.jpg"
-  - heading: "Another heading"
+      Day Lumber's customer base consists of many satisfied and loyal Fortune 500 companies and Dunn & Bradstreet has given Day Lumber the highest financial rating possible.
+
+      Day Lumber's customer base consists of many satisfied and loyal Fortune 500 companies and Dunn & Bradstreet has given Day Lumber the highest financial rating possible.
+
+    imageUrl: "/img/day-truck.jpg"
+  - heading: "Technology"
     text: >
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    imageUrl: "/img/about-sustainable-farming.jpg"
-  - heading: "Another heading"
+     Day Lumber has recently invested in an automated pallet making machine than can make up to 150 pallets an hour.  Day Lumber has also invested in several other pieces of equipment to help optimize our production capabilities.  Between our long tenured and dedicated staff, state of the art machinery, our own trucking fleet, 75,000 + SQF of storage, and a Heat Treat Kiln on site; Day Lumber's price, service, and quality is unmatched.
+
+    imageUrl: "/img/about-2.jpg"
+  - heading: "Quality Family Business"
     text: >
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    imageUrl: "/img/about-direct-sourcing.jpg"
-  - heading: "Profits"
+      All of our wood products come from the highest quality stock and we purchase both pre-cut hardwood and bulk stock from Canada to the Carolinas. In 1986, John and Deborah Simpson purchased Day Lumber. In 2008, Arthur Grodd became the current owner of the newly named KG Pallet, LLC d/b/a/ Day Lumber Company with his partner Neal Churchill. In 2019, Sam Fortsch and Matt Grodd joined the ownership team to enhance the companies current line of business and bring in a rejuvenated focus on sales and customer service.
+    imageUrl: "/img/about-2.jpg"
+  - heading: "New Location"
     text: >
-     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    imageUrl: "/img/about-reinvest-profits.jpg"
+      In 2015, Day Lumber Company moved from it's Westfield facility to a new building in Chicopee, MA.  Over the past few years Day Lumber has brought in a new management team, invested in state of the art equipment, and grown their footprint within the wood packaging industry.
+    imageUrl: "/img/about-2.jpg"
 ---
