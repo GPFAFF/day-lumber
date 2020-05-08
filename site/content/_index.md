@@ -1,5 +1,5 @@
 ---
-title: Day Lumber Companys
+title: Day Lumber Company
 subtitle: Premier wood packaging company in the Northeast.
 image: /img/home-jumbotron.jpg
 blurb:
