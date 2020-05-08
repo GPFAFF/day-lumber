@@ -70,12 +70,18 @@ intro:
 
     - image: /img/kiln.jpeg
       heading: Pallet Heat Treatment Kiln
-      text: This Heat Treatment Kiln was installed in May 2008.  We are able to heat treat any size pallet,skid or wooden box for overseas shipment.  We can provide the documentation to make sure your goods are shipped export certified.
+      list: [
+        {item: Heat Treatment Kiln was installed in May 2008},
+        {item: "We are able to heat treat any size pallet, skid or wooden box for overseas shipment"},
+        {item: We can provide the documentation to make sure your goods are shipped export certified}
+      ]
 
     - image: /img/cushioned-pallet.jpg
       heading: Cushioned Pallets for Special Shipping needs
-      text: We can design or use your design to create any wooden, foam cushioned pallet or box. We specialize in making sure your product is safe for shipment.
-
+      list: [
+        {item: "We can design or use your design to create any wooden, foam cushioned pallet or box"},
+        {item: "We are able to heat treat any size pallet, skid or wooden box for overseas shipment"}
+      ]
   heading: Check out our product offerings
   description: >-
     Day Lumber selling lumber text.

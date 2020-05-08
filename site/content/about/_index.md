@@ -1,7 +1,7 @@
 ---
 title: "About"
 image: /img/pallets.png
-values:
+about:
   - heading: "History"
     text: >
       Day Lumber Corporation was incorporated in 1929 by Clarence Day. Clarence operated Day Lumber as a lumber and retail yard. In the mid 1950s, Peck Lumber Company purchased Day Lumber. Peck Lumber was a family business that owned timberlands, sawmills, and a planning mill. With over 90 years of industry experience, we pride ourselves on having the most knowledgeable and stable workforce in the industry.
