@@ -4,10 +4,20 @@ subtitle: Premier wood packaging company in the Northeast.
 image: /img/home-jumbotron.jpg
 blurb:
   heading: Why Day Lumber?
-  text: Blurb about why Day Lumber is great
+  list: [
+    {item: "Specialize in Domestic and International Wood Packaging"},
+    {item: "Over 90 Years of Experience serving the Northeast"},
+    {item: "Custom Wood Pallets, Crates, Skids, and Boxes"},
+    {item: "Heat Treatment Kiln on Site"},
+    {item: "Export Certified"},
+    {item: "Cut-To-Size Plywood and OSB"},
+    {item: "Cushioned/ shock pallets"},
+    {item: "Dedicated Staff with 300+ years of combine industry experience"},
+    {item: "Unparalleled customer service and product quality"},
+  ]
 intro:
-  heading: What we offer
-  text: Day Lumber offerings.
+  heading: Check out our latest offerings
+  text: From custom wood pallets to crates and skids, Day Lumber has you covered.
 products:
   - image: img/illustrations-coffee.svg
     text: We sell lumber, add more text.

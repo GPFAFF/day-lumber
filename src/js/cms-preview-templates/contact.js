@@ -8,7 +8,7 @@ const ContactEntry = ({heading, text, additionalText, subheader}) =>
     <p>{ additionalText }</p>
   </div>;
 
-const ContactEntries = ({data}) => data && data.length > 0
+const ContactEntries = ({data}) => (data && data.length > 0
   ? <div className="flex-ns mb3">
     {data.map(({heading, subheader, text, additionalText}) =>
       <ContactEntry
@@ -18,7 +18,7 @@ const ContactEntries = ({data}) => data && data.length > 0
         additionalText={additionalText}
       />)}
   </div>
-  : "";
+  : "");
 
 export default class ContactPreview extends React.Component {
   render() {
