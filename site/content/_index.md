@@ -26,4 +26,8 @@ products:
 about:
   heading: About
   text: Find out why we are the premier pallet company in the northeast.
+
+quote:
+  heading: Request for Quote
+  text: Interested in finding out more? Click below to request a quote.
 ---

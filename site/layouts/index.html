@@ -8,6 +8,6 @@
 
 {{ partial "text-and-image" (dict "heading" .Params.about.heading "text" .Params.about.text "buttonText" "Read more" "buttonLink" "/about") }}
 
-{{ partial "blog" . }}
+{{ partial "rfq" (dict "heading" .Params.quote.heading "text" .Params.quote.text "buttonText" "Request for Quote" "buttonLink" "/request-quote") }}
 
 {{ end }}

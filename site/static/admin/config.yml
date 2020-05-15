@@ -110,7 +110,7 @@ collections: # A list of collections the CMS should be able to edit
               - {label: Text, name: text, widget: text}
               - {label: Image, name: imageUrl, widget: image}
 
-      - file: "site/content/rfq/_index.md"
+      - file: "site/content/request-quote/_index.md"
         label: "Quote Page"
         name: "quote"
         fields:
