@@ -67,15 +67,6 @@ intro:
         {item:  End Caps},
         {item:  Particle board and MDF},
       ]
-
-    - image: /img/day-lumber-kiln.jpg
-      heading: Pallet Heat Treatment Kiln
-      list: [
-        {item: Heat Treatment Kiln was installed in May 2008},
-        {item: "We are able to heat treat any size pallet, skid or wooden box for overseas shipment"},
-        {item: We can provide the documentation to make sure your goods are shipped export certified}
-      ]
-
     - image: /img/day-lumber-cushion.jpg
       heading: Cushioned Pallets for Special Shipping needs
       list: [

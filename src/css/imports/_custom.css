@@ -27,3 +27,63 @@
   justify-content: center;
   align-items: center;
 }
+
+.contact-bar {
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  padding: 20px 0;
+}
+
+.contact-bar > a {
+  line-height: 1;
+  text-decoration: none;
+}
+
+.contact-bar > a:hover {
+  cursor: pointer;
+}
+
+li {
+  position: relative;
+}
+
+ul > li > .dropdown {
+  visibility: hidden;
+opacity: 0;
+min-width: 7rem;
+  position: absolute;
+transition: all 0.5s ease;
+  left: 0;
+  text-align: center;
+display: none;
+}
+
+.dropdown-list {
+  display: block;
+  float: left;
+  padding: 1rem;
+  position: relative;
+  text-decoration: none;
+  transition-duration: 0.5s;
+}
+
+
+.dropdown-list:hover,
+.dropdown-list:focus-within {
+  cursor: pointer;
+}
+
+.dropdown-list:focus-within a {
+outline: none;
+}
+ul li:hover > .dropdown,
+ul li:focus-within > .dropdown,
+ul li .dropdown:hover,
+ul li .dropdown:focus {
+   visibility: visible;
+   opacity: 1;
+   display: block;
+}

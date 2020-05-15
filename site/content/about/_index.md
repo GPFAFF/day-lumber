@@ -5,20 +5,16 @@ about:
   - heading: "History"
     text: >
       Day Lumber Corporation was incorporated in 1929 by Clarence Day. Clarence operated Day Lumber as a lumber and retail yard. In the mid 1950s, Peck Lumber Company purchased Day Lumber. Peck Lumber was a family business that owned timberlands, sawmills, and a planning mill. With over 90 years of industry experience, we pride ourselves on having the most knowledgeable and stable workforce in the industry.
-
-    imageUrl: "/img/day-truck.jpg"
-
+    imageUrl: "/img/day-lumber-history.jpg"
   - heading: "Customer service is our number one priority!"
     text: >
       Day Lumber's customer base consists of many satisfied and loyal Fortune 500 companies and Dunn & Bradstreet has given Day Lumber the highest financial rating possible.
 
       Day Lumber's customer base consists of many satisfied and loyal Fortune 500 companies and Dunn & Bradstreet has given Day Lumber the highest financial rating possible.
-
     imageUrl: "/img/day-truck.jpg"
   - heading: "Technology"
     text: >
      Day Lumber has recently invested in an automated pallet making machine than can make up to 150 pallets an hour.  Day Lumber has also invested in several other pieces of equipment to help optimize our production capabilities.  Between our long tenured and dedicated staff, state of the art machinery, our own trucking fleet, 75,000 + SQF of storage, and a Heat Treat Kiln on site; Day Lumber's price, service, and quality is unmatched.
-
     imageUrl: "/img/bw-pallet.jpg"
   - heading: "Quality Family Business"
     text: >
