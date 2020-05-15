@@ -20,3 +20,10 @@
   display: block;
   margin-top: 40px;
 }
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

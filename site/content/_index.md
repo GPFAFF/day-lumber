@@ -19,11 +19,11 @@ intro:
   heading: Check out our latest offerings
   text: From custom wood pallets to crates and skids, Day Lumber has you covered.
 products:
-  - image: img/illustrations-coffee.svg
+  - image: img/logo.svg
     text: We sell lumber, add more text.
-  - image: /img/illustrations-coffee-gear.svg
+  - image: /img/logo.svg
     text: Add more lumber text.
 about:
   heading: About
-  text: What is day lumber about.
+  text: Find out why we are the premier pallet company in the northeast.
 ---

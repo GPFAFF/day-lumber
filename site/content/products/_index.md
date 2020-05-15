@@ -82,9 +82,6 @@ intro:
         {item: "We can design or use your design to create any wooden, foam cushioned pallet or box"},
         {item: "We are able to heat treat any size pallet, skid or wooden box for overseas shipment"}
       ]
-  heading: Check out our product offerings
-  description: >-
-    Day Lumber can meet all your needs.
 pricing:
   heading: Request for Quote
   description: >-

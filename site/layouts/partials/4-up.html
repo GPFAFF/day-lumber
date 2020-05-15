@@ -5,7 +5,7 @@
 
 		<div class="flex-ns flex-wrap mhn2-ns mb3">
 			{{ range .blurbs }}
-				<div class="ph2-ns w-50-ns mb4">
+				<div class="ph4-ns w-50-ns mb4">
 					<h3 class="f4 b lh-title mb2">{{.heading}}</h3>
 					{{if .image}}
 						<img src="{{ .image }}" alt="" class="center" style="max-width: 100%">
@@ -16,7 +16,7 @@
 					{{ end }}
 
 					{{if .list}}
-						<ul class="list">
+						<ul class="list ml3">
 							{{ range .list }}
 								<li class="list-item">{{ .item }}</li>
 							{{end}}
