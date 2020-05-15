@@ -1,6 +1,6 @@
 ---
 title: Day Lumber Company
-subtitle: Premier wood packaging company in the Northeast.
+subtitle: Our Pallets – Your Products – Everything Matters
 image: /img/home-jumbotron.jpg
 blurb:
   heading: Why Day Lumber?
@@ -19,9 +19,9 @@ intro:
   heading: Check out our latest offerings
   text: From custom wood pallets to crates and skids, Day Lumber has you covered.
 products:
-  - image: img/logo.svg
+  - image: /img/day-lumber-1.jpg
     text: We sell lumber, add more text.
-  - image: /img/logo.svg
+  - image: /img/day-lumber-1.jpg
     text: Add more lumber text.
 about:
   heading: About
