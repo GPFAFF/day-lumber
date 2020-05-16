@@ -57,13 +57,14 @@ li {
 
 ul > li > .dropdown {
   visibility: hidden;
-opacity: 0;
-min-width: 7rem;
+  opacity: 0;
+  min-width: 7rem;
   position: absolute;
-transition: all 0.5s ease;
-  left: 0;
+  transition: all 0.5s ease;
+  left: -20px;
+  top: 80px;
   text-align: center;
-display: none;
+  display: none;
 }
 
 .dropdown-list {
@@ -101,4 +102,31 @@ ul li .dropdown:focus {
 
 .flex-child {
   width: 40%;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+.animate-hover {
+  position: relative;
+}
+
+.animate-hover::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  top: 35px;
+  background-color: white;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.animate-hover:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
 }
