@@ -1,0 +1,10 @@
+{{ define "main" }}
+
+{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title) }}
+
+<div class="mw8 center ph3 pt4">
+  <h2>Thanks for submitting</h2>
+  <a class="btn raise" href="{{ "/" | relURL }}">Go Home</a>
+</div>
+
+{{ end }}
