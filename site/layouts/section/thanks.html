@@ -2,9 +2,9 @@
 
 {{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title) }}
 
-<div class="mw8 center ph3 pt4">
-  <h2>Thanks for submitting</h2>
-  <a class="btn raise" href="{{ "/" | relURL }}">Go Home</a>
+<div class="mw8 center ph3 pt4 flex-center">
+  <h2>Thanks for submitting, click below to head back to the home page.</h2>
+  <a class="btn raise mt3" href="{{ "/" | relURL }}">Go Home</a>
 </div>
 
 {{ end }}
