@@ -1,41 +1,37 @@
 <!-- Contact -->
 <div class="mb4">
-  <h4 class="f3 b lh-title mb3 tc">Drop us a line below</h4>
+  <h4 class="f3 b lh-title mb4 tc">Drop us a line below</h4>
 
   <form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
     <p class="hidden">
       <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
     </p>
-    <div class="flex-l mhn1-l">
       <!-- Name -->
-      <div class="ph1-l w-50-l">
-        <fieldset>
-          <input type="text" id="name" name="name" placeholder="Company Name" class="w-100 mb2">
-          <label for="name">Company Name</label>
-        </fieldset>
-      </div>
-      <div class="ph1-l w-50-l">
-        <fieldset>
-          <input type="text" id="contact-name" name="contact" placeholder="Contact Name" class="w-100 mb2">
-          <label for="name">Contact Name</label>
-        </fieldset>
-      </div>
+    <div class="mb4">
+      <fieldset>
+        <input type="text" id="name" name="name" placeholder="Company Name" class="w-100 mb2">
+        <label for="name">Company Name</label>
+      </fieldset>
     </div>
-    <div class="flex-l mhn1-l">
-      <!-- Email -->
-      <div class="ph1-l w-50-l">
-        <fieldset>
-          <input type="email" id="email" name="email" placeholder="Contact Email" class="w-100 mb2">
-          <label for="email">Contact Email</label>
-        </fieldset>
-      </div>
+    <div class="mb4">
+      <fieldset>
+        <input type="text" id="contact-name" name="contact" placeholder="Contact Name" class="w-100 mb2">
+        <label for="name">Contact Name</label>
+      </fieldset>
+    </div>
+    <!-- Email -->
+    <div class="mb4">
+      <fieldset>
+        <input type="email" id="email" name="email" placeholder="Contact Email" class="w-100 mb2">
+        <label for="email">Contact Email</label>
+      </fieldset>
+    </div>
 
-      <div class="ph1-l w-50-l">
-        <fieldset>
-          <input type="number" id="number" name="number" placeholder="Contact Number" class="w-100 mb2">
-          <label for="number">Contact Number</label>
-        </fieldset>
-      </div>
+    <div class="mb4">
+      <fieldset>
+        <input type="number" id="number" name="number" placeholder="Contact Number" class="w-100 mb2">
+        <label for="number">Contact Number</label>
+      </fieldset>
     </div>
 
     <!-- Message -->
@@ -44,7 +40,7 @@
       <label for="message">Your message</label>
     </fieldset>
     <!-- Button -->
-    <div class="tc">
+    <div class="tc mt3">
       <button type="submit" class="btn w-100 w-auto-ns raise">Submit</button>
     </div>
   </form>

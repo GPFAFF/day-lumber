@@ -1,5 +1,5 @@
 ---
-title: Quote
+title: Request for Quote
 type: quote
 image: /img/home-jumbotron.jpg
 heading: Request a quote for pallets

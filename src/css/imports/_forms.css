@@ -74,3 +74,8 @@ label
   transition: var(--hover-transition);
   z-index: 2;
 }
+
+.checkbox-label {
+  opacity: 1;
+  position: relative;
+}

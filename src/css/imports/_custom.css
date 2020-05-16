@@ -37,9 +37,14 @@
   padding: 20px 0;
 }
 
-.contact-bar > a {
+.contact-bar > div {
+  margin-top: 8px;
+}
+
+.contact-bar > div > a {
   line-height: 1;
   text-decoration: none;
+  padding-top: 4px;
 }
 
 .contact-bar > a:hover {
@@ -86,4 +91,13 @@ ul li .dropdown:focus {
    visibility: visible;
    opacity: 1;
    display: block;
+}
+
+.flex-two {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.flex-child {
+  width: 40%;
 }
