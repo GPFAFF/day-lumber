@@ -101,7 +101,15 @@ ul li .dropdown:focus {
 }
 
 .flex-child {
-  width: 40%;
+  display: flex;
+}
+
+.flex-child > input:nth-of-type(odd) {
+  margin-right: 5px;
+}
+
+.flex-child > input:nth-of-type(even) {
+  margin-left: 5px;
 }
 
 .jumbotron {
@@ -129,4 +137,87 @@ ul li .dropdown:focus {
 .animate-hover:hover::before {
   visibility: visible;
   transform: scaleX(1);
+}
+
+.checkbox input[type="checkbox"] {
+  opacity: 0;
+}
+
+.checkbox label {
+  position: relative;
+  display: inline-block;
+  color: black;
+  background-color: white;
+  /*16px width of fake checkbox + 6px distance between fake checkbox and text*/
+  padding-left: 42px;
+  transition: none;
+}
+
+.checkbox input:hover {
+  cursor: pointer;
+}
+
+.checkbox label::before,
+.checkbox label::after {
+  position: absolute;
+  content: "";
+  top: unset;
+  left: unset;
+
+  /*Needed for the line-height to take effect*/
+  display: inline-block;
+}
+
+/*Outer box of the fake checkbox*/
+.checkbox label::before{
+  height: 24px;
+  width: 24px;
+
+  border: 1px solid;
+  left: 0px;
+
+  /*(24px line-height - 16px height of fake checkbox) / 2 - 1px for the border
+   *to vertically center it.
+   */
+  top: 0;
+}
+
+/*Checkmark of the fake checkbox*/
+.checkbox label::after {
+  height: 5px;
+  width: 9px;
+  border-left: 4px solid;
+  border-bottom: 4px solid;
+  transform: rotate(-45deg);
+  left: 6px;
+  top: 7px;
+}
+
+/*Hide the checkmark by default*/
+.checkbox input[type="checkbox"] + label::after {
+  content: none;
+}
+
+/*Unhide on the checked state*/
+.checkbox input[type="checkbox"]:checked + label::after {
+  content: "";
+}
+
+/*Adding focus styles on the outer-box of the fake checkbox*/
+.checkbox input[type="checkbox"]:focus + label::before {
+  outline: rgb(59, 153, 252) auto 5px;
+  transform: none;
+}
+
+/*Adding focus styles on the outer-box of the fake checkbox*/
+.checkbox input[type="checkbox"]:focus + label {
+  transform: none;
+}
+
+.two-across, .three-across {
+  display: flex;
+}
+
+.two-across > div, .three-across > div {
+  flex: 1;
 }

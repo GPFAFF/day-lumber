@@ -8,29 +8,27 @@
     </p>
     <div>
       <!-- Date -->
-      <div>
+      <div class="mb4">
         <fieldset>
           <input type="text" id="date" name="date" placeholder="Date" class="w-100 mb2">
           <label for="name">Date</label>
         </fieldset>
       </div>
-      <div>
+      <div class="mb4">
         <fieldset>
           <input type="text" id="customer" name="customer" placeholder="Customer Name" class="w-100 mb2">
           <label for="name">Customer Name</label>
         </fieldset>
       </div>
-    </div>
-    <div>
       <!-- Size -->
-      <div>
+      <div class="mb4">
         <fieldset>
           <input type="text" id="size" name="size" placeholder="Size" class="w-100 mb2">
           <label for="email">Size</label>
         </fieldset>
       </div>
 
-      <div>
+      <div class="mb4">
         <fieldset>
           <input type="text" id="pallet-frequency" name="pallet-frequency" placeholder="Pallet Frequency" class="w-100 mb2">
           <label for="number">Pallet Frequency</label>
@@ -39,95 +37,97 @@
     </div>
 
     <!-- Message -->
-    <fieldset>
+    <fieldset class="mb4">
       <legend>Type of Wood</legend>
       <div>
-        <input type="checkbox" id="dense-hardwood" name="dense-hardwood">
-        <label class="checkbox-label" for="dense-hardwood">Dense hardwood</label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="aspen" name="aspen">
-        <label class="checkbox-label" for="aspen">Aspen</label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="softwood" name="softwood">
-        <label class="checkbox-label" for="softwood">Softwood</label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="other" name="other">
-        <label class="checkbox-label" for="other">Other</label>
+        <div class="two-across mt2">
+          <div class="checkbox mt2">
+            <input type="checkbox" id="dense-hardwood" name="dense-hardwood">
+            <label class="checkbox-label" for="dense-hardwood">Dense hardwood</label>
+          </div>
+          <div class="checkbox mt2">
+            <input type="checkbox" id="aspen" name="aspen">
+            <label class="checkbox-label" for="aspen">Aspen</label>
+          </div>
+        </div>
+        <div class="two-across mt2">
+          <div class="checkbox mt2">
+            <input type="checkbox" id="softwood" name="softwood">
+            <label class="checkbox-label" for="softwood">Softwood</label>
+          </div>
+          <div class="checkbox mt2">
+            <input type="checkbox" id="other" name="other">
+            <label class="checkbox-label" for="other">Other</label>
+          </div>
+        </div>
       </div>
     </fieldset>
 
-    <fieldset class="flex-two">
+    <fieldset class="flex-two mb4">
       <div class="flex-child">
         <input type="text" id="runners" name="runners" placeholder="Runners" class="w-100 mb2">
         <label for="number">Runners</label>
-      </div>
 
-      <div class="flex-child">
         <input type="text" id="runners-dimensions" name="runners-dimensions" placeholder="Dimensions" class="w-100 mb2">
         <label for="number">Dimensions</label>
       </div>
     </fieldset>
 
-    <fieldset class="flex-two">
+    <fieldset class="flex-two mb4">
       <div class="flex-child">
         <input type="text" id="front-deck" name="front-deck" placeholder="Front Deck" class="w-100 mb2">
         <label for="number">Front Deck</label>
-      </div>
 
-      <div class="flex-child">
         <input type="text" id="bottom-deck-dimensions" name="bottom-deck-dimensions" placeholder="Dimensions" class="w-100 mb2">
         <label for="number">Dimensions</label>
       </div>
     </fieldset>
 
-    <fieldset class="flex-two">
+    <fieldset class="flex-two mb4">
       <div class="flex-child">
         <input type="text" id="bottom-deck" name="bottom-deck" placeholder="Bottom Deck" class="w-100 mb2">
         <label for="number">Bottom Deck</label>
-      </div>
-
-      <div class="flex-child">
         <input type="text" id="bottom-deck-dimensions" name="bottom-deck-dimensions" placeholder="Dimensions" class="w-100 mb2">
         <label for="number">Dimensions</label>
       </div>
     </fieldset>
 
-    <fieldset>
+    <fieldset class="mb4">
       <legend>Special Instructions</legend>
       <div>
-        <input type="checkbox" id="four-way" name="four-way">
-        <label class="checkbox-label" for="four-way">Four Way</label>
-      </div>
+        <div class="three-across mt2">
+          <div class="checkbox mt2">
+            <input type="checkbox" id="four-way" name="four-way">
+            <label class="checkbox-label" for="four-way">Four Way</label>
+          </div>
 
-      <div>
-        <input type="checkbox" id="notching" name="notching">
-        <label class="checkbox-label" for="notching">Notching</label>
-      </div>
+          <div class="checkbox mt2">
+            <input type="checkbox" id="notching" name="notching">
+            <label class="checkbox-label" for="notching">Notching</label>
+          </div>
 
-      <div>
-        <input type="checkbox" id="banding" name="banding">
-        <label class="checkbox-label" for="banding">Banding</label>
-      </div>
+          <div class="checkbox mt2">
+            <input type="checkbox" id="banding" name="banding">
+            <label class="checkbox-label" for="banding">Banding</label>
+          </div>
+        </div>
 
-      <div>
-        <input type="checkbox" id="stamp" name="stamp">
-        <label class="checkbox-label" for="stamp">Stencil/Stamp</label>
-      </div>
+        <div class="three-across mt2">
+          <div class="checkbox mt2">
+            <input type="checkbox" id="stamp" name="stamp">
+            <label class="checkbox-label" for="stamp">Stencil/Stamp</label>
+          </div>
 
-      <div>
-        <input type="checkbox" id="heat" name="heat">
-        <label class="checkbox-label" for="heat">Heat Treat</label>
-      </div>
+          <div class="checkbox mt2">
+            <input type="checkbox" id="heat" name="heat">
+            <label class="checkbox-label" for="heat">Heat Treat</label>
+          </div>
 
-      <div>
-        <input type="checkbox" id="delivery" name="delivery">
-        <label class="checkbox-label" for="delivery">Delivery</label>
+          <div class="checkbox mt2">
+            <input type="checkbox" id="delivery" name="delivery">
+            <label class="checkbox-label" for="delivery">Delivery</label>
+          </div>
+        </div>
       </div>
     </fieldset>
 
