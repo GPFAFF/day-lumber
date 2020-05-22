@@ -4,7 +4,7 @@ subtitle: Our Pallets – Your Products
 secondary: Everything Matters
 image: /img/pallets.png
 quote:
-  heading: Request for Quote
+  heading: Request a Quote
   text: Interested in finding out more? Click below to request a quote.
 blurb:
   heading: Why Day Lumber?

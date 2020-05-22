@@ -54,7 +54,7 @@ intro:
         {item: "We are able to heat treat any size pallet, skid or wooden box for overseas shipment"}
       ]
 pricing:
-  heading: Request for Quote
+  heading: Request a Quote
   description: >-
     Interested in finding out more? Click below to request a quote.
 ---

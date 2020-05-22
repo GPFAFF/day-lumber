@@ -1,7 +1,7 @@
 ---
 title: Meet the Team
 type: team
-image: /img/home-jumbotron.jpg
+image: /img/family.jpg
 team:
   blurbs:
     - member:

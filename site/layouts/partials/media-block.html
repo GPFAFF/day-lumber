@@ -1,10 +1,12 @@
 <div class="flex-m mhn3-m mb4">
 
-  <div class="ph3-m">
-    <img src="{{.imageUrl}}" alt="" class="db mb2 vh-40">
-  </div>
+  {{ if .imageUrl}}
+    <div class="ph3-m">
+      <img src="{{.imageUrl}}" alt="" class="db mb2">
+    </div>
+  {{ end }}
 
-  <div class="ph3-m vh-40">
+  <div class="ph3-m">
     <h3 class="f3 b lh-title mb1">{{.heading}}</h3>
     {{ if .text }}
       <p>{{.text}}</p>
