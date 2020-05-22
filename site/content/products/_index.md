@@ -1,13 +1,13 @@
 ---
 title: Products
 type: products
-image: /img/home-jumbotron.jpg
+image: /img/pallets.png
 heading: Check out our latest offerings
 description: >-
   We have all your needs.
 intro:
   blurbs:
-    - image: /img/day-lumber-skid.jpg
+    - image: /img/day-lumber-pallets.jpg
       heading: Pallets & Skids
       list: [
         {item:  Any/All Sizes},
@@ -38,43 +38,23 @@ intro:
         {item:  International Export Certification},
         {item:  Certified for Military Specifications},
       ]
-
-    - image: /img/day-lumber-forklift.jpg
-      heading: Wooden Boxes
-      list: [
-        {item: Made of high quality hardwood or softwood},
-        {item: Meet military specifications (Mil Spec)},
-        {item: Custom Boxes},
-        {item: Foam Inserts},
-        {item: Quality hardware},
-        {item: Shipping crates},
-      ]
-
     - image: /img/day-lumber-bins.jpg
       heading: Collapsible Bins
       list: [
+        {item: Bins built to spec for the Cranberry Industry},
         {item: Made with high quality dense hardwood},
         {item: Nylon webbing},
         {item: Agricultural bins},
         {item: Customized designs}
       ]
-
-    - image: /img/day-lumber-skid.jpg
-      heading: Plywood & OSB Cut-To-Size
-      list: [
-        {item:  High Volume precision cutting},
-        {item:  UPC code labeling available},
-        {item:  End Caps},
-        {item:  Particle board and MDF},
-      ]
-    - image: /img/day-lumber-cushion.jpg
-      heading: Cushioned Pallets for Special Shipping needs
+    - image: /img/day-lumber-cushioned.jpg
+      heading: Cushioned Pallets for Specialty Special Shipping needs
       list: [
         {item: "We can design or use your design to create any wooden, foam cushioned pallet or box"},
         {item: "We are able to heat treat any size pallet, skid or wooden box for overseas shipment"}
       ]
 pricing:
-  heading: Request for Quote
+  heading: Request a Quote
   description: >-
     Interested in finding out more? Click below to request a quote.
 ---

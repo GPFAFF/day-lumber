@@ -1,13 +1,13 @@
 {{ define "main" }}
 
-{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
+{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle "secondary" .Params.secondary) }}
+
+{{ partial "rfq" (dict "heading" .Params.quote.heading "text" .Params.quote.text "buttonText" "Request a Quote" "buttonLink" "/request-quote") }}
 
 {{ partial "short-text" .Params.blurb}}
 
 {{ partial "2-up" .Params }}
 
 {{ partial "text-and-image" (dict "heading" .Params.about.heading "text" .Params.about.text "buttonText" "Read more" "buttonLink" "/about") }}
-
-{{ partial "rfq" (dict "heading" .Params.quote.heading "text" .Params.quote.text "buttonText" "Request for Quote" "buttonLink" "/request-quote") }}
 
 {{ end }}

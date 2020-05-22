@@ -1,7 +1,11 @@
 ---
 title: Day Lumber Company
-subtitle: Our Pallets – Your Products – Everything Matters
-image: /img/home-jumbotron.jpg
+subtitle: Our Pallets – Your Products
+secondary: Everything Matters
+image: /img/pallets.png
+quote:
+  heading: Request a Quote
+  text: Interested in finding out more? Click below to request a quote.
 blurb:
   heading: Why Day Lumber?
   list: [
@@ -12,7 +16,7 @@ blurb:
     {item: "Export Certified"},
     {item: "Cut-To-Size Plywood and OSB"},
     {item: "Cushioned/ shock pallets"},
-    {item: "Dedicated Staff with 300+ years of combine industry experience"},
+    {item: "Dedicated Staff with 300+ years of combined industry experience"},
     {item: "Unparalleled customer service and product quality"},
   ]
 intro:
@@ -26,8 +30,4 @@ products:
 about:
   heading: About
   text: Find out why we are the premier pallet company in the northeast.
-
-quote:
-  heading: Request for Quote
-  text: Interested in finding out more? Click below to request a quote.
 ---
