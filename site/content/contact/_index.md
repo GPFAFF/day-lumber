@@ -1,6 +1,6 @@
 ---
 title: "Contact Us"
-image: /img/home-jumbotron.jpg
+image: /img/pallets.png
 map: "/img/alternate-logo.svg"
 contact_entries:
   - heading: Location

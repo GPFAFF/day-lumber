@@ -1,7 +1,7 @@
 ---
 title: Services
 type: services
-image: /img/home-jumbotron.jpg
+image: /img/pallets.png
 services:
   - heading: "Check out our services"
     list: [
