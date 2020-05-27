@@ -222,6 +222,7 @@ ul li .dropdown:focus {
   flex: 1;
 }
 
-.80-20 {
-  background-position: 100% 20%;
+.cflex {
+  display: flex;
+  justify-content: center;
 }

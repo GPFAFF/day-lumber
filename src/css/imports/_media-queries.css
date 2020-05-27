@@ -3,3 +3,5 @@
 @custom-media --breakpoint-medium screen and (min-width: 50em);
 
 @custom-media --breakpoint-large screen and (min-width: 60em);
+
+@custom-media --breakpoint-med screen and (max-width: 800px);

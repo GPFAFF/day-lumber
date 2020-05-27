@@ -97,3 +97,7 @@
   .w-two-thirds-l { width: calc(100% / 1.5); }
   .w-auto-l {    width: auto; }
 }
+
+@media (--breakpoint-med) {
+  .flex-col { display: flex; flex-direction: column;}
+}
