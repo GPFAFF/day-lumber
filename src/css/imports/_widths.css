@@ -100,4 +100,5 @@
 
 @media (--breakpoint-med) {
   .flex-col { display: flex; flex-direction: column;}
+  .img-med { width: 100%; max-width: 100%}
 }
