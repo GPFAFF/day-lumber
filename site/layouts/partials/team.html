@@ -1,10 +1,12 @@
 <div class="flex-m mhn3-m mb4">
   <div class="ph3-m">
-    <img src={{.member.image}} alt="" class="db mb2 vh-40">
+    <img src={{.member.image}} alt="" class="db mb2" style="width: 320px">
   </div>
 
-  <div class="ph3-m vh-40">
+  <div class="ph3-m">
     <h3 class="f3 b lh-title mb1">{{.member.heading}}</h3>
     <p>{{.member.text}}</p>
+    <a class="db no-underline" href="mailto:{{.member.email}}">{{.member.email}}</a>
+    <a class="db no-underline" href="tel:{{.member.phone}}">{{.member.phone}}</a>
   </div>
 </div>

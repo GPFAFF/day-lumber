@@ -221,3 +221,7 @@ ul li .dropdown:focus {
 .two-across > div, .three-across > div {
   flex: 1;
 }
+
+.80-20 {
+  background-position: 100% 20%;
+}

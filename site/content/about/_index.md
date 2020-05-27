@@ -23,4 +23,5 @@ about:
   - heading: "New Location"
     text: >
       In 2015, Day Lumber Company moved from it's Westfield facility to a new building in Chicopee, MA.  Over the past few years Day Lumber has brought in a new management team, invested in state of the art equipment, and grown their footprint within the wood packaging industry.
+    imageUrl: "/img/day-location.jpg"
 ---
