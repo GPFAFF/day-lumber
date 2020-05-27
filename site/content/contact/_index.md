@@ -1,7 +1,7 @@
 ---
 title: "Contact Us"
 image: /img/pallets.png
-map: "/img/alternate-logo.svg"
+map: "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJPTWocF0e54kRdPJQfrFoX4o&key=AIzaSyDwiZrzoZWw0a9bTvOBP0phu4M2MqEgH8o"
 hours: "Hours of Operation"
 contact_entries:
   - heading: Location

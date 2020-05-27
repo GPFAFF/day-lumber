@@ -4,7 +4,7 @@ image: /img/family.jpg
 team:
   blurbs:
     - member:
-        heading: "Neil Churchill"
+        heading: "Neal Churchill"
         image: "/img/neal.jpg"
         text: "President"
         email: "neal@daylumber.com"
