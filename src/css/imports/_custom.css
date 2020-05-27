@@ -226,3 +226,11 @@ ul li .dropdown:focus {
   display: flex;
   justify-content: center;
 }
+
+.hours-container {
+  display: flex;
+}
+
+.hours {
+  flex: 1;
+}

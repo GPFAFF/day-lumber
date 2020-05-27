@@ -13,7 +13,9 @@
 				{{ range .Params.contact_entries }}
 				<div class="flex-auto-ns pa2">
 					<h4 class="f4 b lh-title mb2 primary">{{ .heading }}</h4>
-					<h5 class="f5 b lh-title mb2 primary">{{ .subheader }}</h5>
+					{{ if .subheader }}
+						<h5 class="f5 b lh-title mb2 primary">{{ .subheader }}</h5>
+					{{ end }}
 					<p>
 						{{ .text }}
 					<br>
@@ -23,23 +25,21 @@
 			{{ end }}
 		</div>
 
+		<h4 class="f4 b lh-title mb2 primary ml2">{{ .Params.hours }}</h4>
+
 		<div class="flex-ns mb4">
 			{{ range .Params.secondary_entries }}
-			<div class="flex-auto-ns pa2">
-				<h4 class="f4 b lh-title mb2 primary">{{ .heading }}</h4>
-				<h5 class="f5 b lh-title mb2 primary">{{ .subheader }}</h5>
-				<p>
-					{{ .text }}
-				</p>
-			</div>
-
-			<div class="flex-auto-ns pa2">
-				<h5 class="f5 b lh-title mb2 primary">{{ .secondHeader }}</h5>
-				<p>
-					{{ .secondText }}
-				</p>
-			</div>
-		{{ end }}
+				{{ range .contact }}
+					<div class="flex-auto-ns pa2">
+						<h4 class="f4 b lh-title mb2 primary">{{ .header }}</h4>
+						<h5>
+							{{ .text }}
+							<br>
+							{{ .hours}}
+						</h5>
+					</div>
+				{{ end }}
+			{{ end }}
 		</div>
 
 		{{ partial "contact-form" . }}

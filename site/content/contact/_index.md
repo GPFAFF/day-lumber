@@ -2,6 +2,7 @@
 title: "Contact Us"
 image: /img/pallets.png
 map: "/img/alternate-logo.svg"
+hours: "Hours of Operation"
 contact_entries:
   - heading: Location
     text: "70 Orange Street"
@@ -10,11 +11,18 @@ contact_entries:
     text: "TEL: 413-536-3511"
     additionalText: "FAX: 413-536-5510"
 secondary_entries:
-  - heading: Hours of Operation
-    subheader: Office
-    text: "Monday – Friday: 8AM – 5PM"
-    secondHeader: Plant
-    secondText: "Monday - Thursday: 6:00AM - 4:30PM"
+  - contact: [
+    {
+      header: "Office",
+      text: "Monday – Friday",
+      hours: 8:00AM – 5:00PM,
+    },
+    {
+      header: "Plant",
+      text: "Monday - Thursday",
+      hours: 6:00AM - 4:30PM,
+    }
+  ]
 ---
 
 We’d love to get in touch with you and hear your ideas and
