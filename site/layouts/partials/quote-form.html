@@ -1,6 +1,6 @@
 <!-- Quote Form -->
 <div class="mb4 mw6 center">
-  <h4 class="f3 b lh-title mb5 tc">Request a Quote for Pallets</h4>
+  <h4 class="f3 b lh-title mb5 tc">Request a Quote</h4>
 
   <form name="quote" method="POST" netlify-honeypot="bot-field" data-netlify="true" action="/thanks">
     <p class="hidden">
@@ -10,21 +10,31 @@
       <!-- Date -->
       <div class="mb4">
         <fieldset>
-          <input type="text" id="date" name="date" placeholder="Date" class="w-100 mb2">
-          <label for="name">Date</label>
+          <input type="text" id="name" name="name" placeholder="Customer" class="w-100 mb2">
+          <label for="name">Customer</label>
         </fieldset>
       </div>
+
       <div class="mb4">
         <fieldset>
-          <input type="text" id="customer" name="customer" placeholder="Customer Name" class="w-100 mb2">
-          <label for="name">Customer Name</label>
+          <input type="text" id="contact" name="contact" placeholder="Contact Name" class="w-100 mb2">
+          <label for="name">Contact Name</label>
         </fieldset>
       </div>
+
       <!-- Email -->
       <div class="mb4">
         <fieldset>
-          <input type="text" id="email" name="email" placeholder="Customer Email" class="w-100 mb2">
-          <label for="email">Customer Email</label>
+          <input type="text" id="email" name="email" placeholder="Email" class="w-100 mb2">
+          <label for="email">Email</label>
+        </fieldset>
+      </div>
+
+       <!-- Phone -->
+       <div class="mb4">
+        <fieldset>
+          <input type="text" id="phone" name="phone" placeholder="Phone Number" class="w-100 mb2">
+          <label for="phone">Phone Number</label>
         </fieldset>
       </div>
 
