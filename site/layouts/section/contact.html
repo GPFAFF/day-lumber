@@ -5,10 +5,8 @@
 <div class="ph3 bg-off-white">
 	<div class="center mw6 pv3">
 
-		<iframe class="db w-100 center pv4 flex-center" width="1000" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:{{ getenv 'API_KEY' }}" allowfullscreen></iframe>
+		<iframe class="db w-100 center pv4 flex-center" width="1000" height="450" frameborder="0" style="border:0" src="{{ getenv 'HUGO_API_KEY' }}" allowfullscreen></iframe>
 		{{ .Content }}
-
-		{{ getenv "HOME" }}
 
 		<div class="flex-ns mb4">
 				{{ range .Params.contact_entries }}
