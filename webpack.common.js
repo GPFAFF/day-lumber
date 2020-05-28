@@ -4,7 +4,6 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const AssetsPlugin = require("assets-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const api_key = process.env.api_key;
 
 module.exports = {
   entry: {
@@ -53,8 +52,6 @@ module.exports = {
       filename: "admin/index.html",
       template: "src/cms.html",
       inject: false,
-      apiUrl: `https://www.google.com/maps/embed/v1/place?q=place_id:${api_key}`,
-
     }),
   ]
 };
