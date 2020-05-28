@@ -2,7 +2,6 @@ baseurl = "/"
 languageCode = "en-us"
 languageLang = "en"
 title = "Homepage"
-api_key = "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJPTWocF0e54kRdPJQfrFoX4o&key=AIzaSyD3doq-Wr3FisPy1nxaqSnDNHSQqPhkf94"
 
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details:
