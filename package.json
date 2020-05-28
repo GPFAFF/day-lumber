@@ -1,8 +1,8 @@
 {
-  "name": "victor-hugo",
+  "name": "day-lumber",
   "version": "1.0.0",
-  "description": "Victor Hugo is a Hugo boilerplate for creating truly epic websites!",
-  "repository": "netlify/victor-hugo",
+  "description": "Day Lumber Pallet company",
+  "repository": "day-lumber",
   "main": "index.js",
   "scripts": {
     "lint": "eslint src",
