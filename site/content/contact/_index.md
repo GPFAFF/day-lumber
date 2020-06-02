@@ -15,7 +15,7 @@ secondary_entries:
     {
       header: "Office",
       text: "Monday – Friday",
-      hours: 8:00AM – 5:00PM,
+      hours: 6:00AM – 5:00PM,
     },
     {
       header: "Plant",
@@ -23,6 +23,10 @@ secondary_entries:
       hours: 6:00AM - 4:30PM,
     }
   ]
+customer_service:
+  - heading: "For Customer Service, please contact:"
+    email: Kathy@daylumber.com
+
 ---
 
 We’d love to get in touch with you and hear your ideas and

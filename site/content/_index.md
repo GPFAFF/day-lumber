@@ -27,5 +27,5 @@ products:
   - image: /img/day-lumber-pallets.jpg
 about:
   heading: About
-  text: Find out why we are the premier pallet company in the northeast.
+  text: Find out why Day Lumber is the premier pallet manufacturing company in the Northeast
 ---
