@@ -2,7 +2,6 @@
 title: "Contact Us"
 image: /img/pallets.png
 hours: "Hours of Operation"
-key: "ChIJPTWocF0e54kRdPJQfrFoX4o&key=AIzaSyD3doq-Wr3FisPy1nxaqSnDNHSQqPhkf94"
 contact_entries:
   - heading: Location
     text: "70 Orange Street"
