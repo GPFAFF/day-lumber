@@ -25,6 +25,7 @@ secondary_entries:
 customer_service:
   - heading: "For Customer Service, please contact:"
     email: Kathy@daylumber.com
+    telephone: "413-536-3511"
 
 ---
 
