@@ -234,3 +234,10 @@ ul li .dropdown:focus {
 .hours {
   flex: 1;
 }
+
+@media (--breakpoint-sm) {
+  input:focus,
+  textarea:focus {
+    border: 2px solid var(--primary);
+  }
+}
