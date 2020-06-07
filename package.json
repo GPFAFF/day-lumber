@@ -67,6 +67,7 @@
     "webpack-merge": "^4.1.4"
   },
   "dependencies": {
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "websocket-extensions": "^0.1.4"
   }
 }
