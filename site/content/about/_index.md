@@ -14,11 +14,11 @@ about:
     imageUrl: "/img/day-truck.jpg"
   - heading: "Technology"
     text: >
-     Day Lumber has recently invested in an automated pallet making machine than can make up to 150 pallets an hour.  Day Lumber has also invested in several other pieces of equipment to help optimize our production capabilities.  Between our long tenured and dedicated staff, state of the art machinery, our own trucking fleet, 75,000 + SQF of storage, and a Heat Treat Kiln on site; Day Lumber's price, service, and quality is unmatched.
+      Day Lumber has recently invested in an automated pallet making machine than can make up to 150 pallets an hour.  Day Lumber has also invested in several other pieces of equipment to help optimize our production capabilities.  Between our long tenured and dedicated staff, state of the art machinery, our own trucking fleet, 75,000 + SQF of storage, and a Heat Treat Kiln on site; Day Lumber's price, service, and quality is unmatched.
     imageUrl: "/img/technology.jpg"
   - heading: "Quality Family Business"
     text: >
-      All of our wood products come from the highest quality stock and we purchase both pre-cut hardwood and bulk stock from Canada to the Carolinas. In 1986, John and Deborah Simpson purchased Day Lumber. In 2008, Arthur Grodd became the current owner of the newly named KG Pallet, LLC d/b/a/ Day Lumber Company with his partner Neal Churchill. In 2019, Sam Fortsch and Matt Grodd joined the ownership team to enhance the companies current line of business and bring in a rejuvenated focus on sales and customer service.
+      All of our wood products come from the highest quality stock and we purchase both pre-cut hardwood and bulk stock from Canada to the Carolinas. In 1986, John and Deborah Simpson purchased Day Lumber. In 2008, Arthur Grodd became the current owner of the newly named KG Pallet, LLC d/b/a/ Day Lumber Company with his partner Neal Churchill. In 2019, Matt Grodd joined the ownership team to enhance the companies current line of business and bring in a rejuvenated focus on sales and customer service.
     imageUrl: "/img/family.jpg"
   - heading: "New Location"
     text: >
