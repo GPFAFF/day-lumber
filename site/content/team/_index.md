@@ -15,4 +15,10 @@ team:
         text: "Sales Director"
         email: "matt@daylumber.com"
         phone: "413-244-6093"
+    - member:
+        heading: "Todd Young"
+        image: "/img/todd.jpg"
+        text: "General Manager"
+        email: "todd@daylumber.com"
+        phone: "413-563-9107"
 ---
