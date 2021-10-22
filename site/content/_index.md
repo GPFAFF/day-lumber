@@ -33,5 +33,5 @@ products:
   - image: /img/day-lumber-pallets.jpg
 about:
   heading: About
-  text: Find out why Day Lumber is the premier pallet manufacturing company in the Great Springfield, MA and Hartford, CT area in addition to servicing customers throughout the entire Northeast.
+  text: Find out why Day Lumber is the premier pallet manufacturing company in the Greater Springfield, MA and Hartford, CT area in addition to servicing customers throughout the entire Northeast.
 ---
