@@ -9,8 +9,6 @@ about:
   - heading: "Customer service is our number one priority!"
     text: >
       Day Lumber's customer base consists of many satisfied and loyal Fortune 500 companies and Dunn & Bradstreet has given Day Lumber the highest financial rating possible.
-
-      Day Lumber's customer base consists of many satisfied and loyal Fortune 500 companies and Dunn & Bradstreet has given Day Lumber the highest financial rating possible.
     imageUrl: "/img/day-truck.jpg"
   - heading: "Technology"
     text: >
