@@ -8,7 +8,6 @@ contact_entries:
     additionalText: "Chicopee, MA 01013"
   - heading: Contact
     text: "TEL: 413-536-3511"
-    additionalText: "FAX: 413-536-5510"
 secondary_entries:
   - contact: [
     {
