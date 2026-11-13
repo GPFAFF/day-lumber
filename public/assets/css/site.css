@@ -1,0 +1,28 @@
+/* Site-wide overrides, loaded after the theme stylesheets on every page. */
+
+/* Buttons (.vs-btn): the theme reveals the hover color with two overlays that flip
+   in on the X and Y axes, an "X" shape that flips back out on mouse-out. Keep each
+   section's overlay color but fade it in and out instead. */
+.vs-btn::before,
+.vs-btn::after {
+  transform: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.vs-btn:hover::before,
+.vs-btn:hover::after,
+.vs-btn:focus-visible::before,
+.vs-btn:focus-visible::after {
+  transform: none;
+  opacity: 1;
+}
+.vs-btn {
+  transition: color 0.25s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .vs-btn,
+  .vs-btn::before,
+  .vs-btn::after {
+    transition: none;
+  }
+}
