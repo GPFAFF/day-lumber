@@ -1,0 +1,63 @@
+name: Smoke test
+
+# 1. built-site: build the PR in CI, serve it locally, crawl every page and exercise the widgets.
+# 2. deploy-preview: wait until Netlify's deploy preview serves this PR's head commit
+#    (dist/version.txt holds COMMIT_REF), then run the same checks plus redirects and headers.
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: smoke-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  built-site:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - uses: actions/setup-node@v4.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run build
+      - name: Serve dist/
+        run: |
+          npm run preview -- --port 4321 > preview.log 2>&1 &
+          for i in $(seq 1 30); do curl -fsS http://localhost:4321/ > /dev/null && exit 0; sleep 1; done
+          cat preview.log; exit 1
+      - run: npm run test:smoke -- http://localhost:4321
+
+  deploy-preview:
+    if: github.event_name == 'pull_request'
+    needs: built-site
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      PREVIEW_URL: https://deploy-preview-${{ github.event.pull_request.number }}--daylumber.netlify.app
+      HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - uses: actions/setup-node@v4.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Wait for the deploy preview of this commit
+        run: |
+          for i in $(seq 1 60); do
+            served=$(curl -fsS "$PREVIEW_URL/version.txt" 2>/dev/null | tr -d '[:space:]' || true)
+            [ "$served" = "$HEAD_SHA" ] && echo "preview serves $HEAD_SHA" && exit 0
+            echo "waiting (preview serves '${served:-nothing}')"; sleep 20
+          done
+          echo "deploy preview never served $HEAD_SHA"; exit 1
+      - run: npm run test:smoke -- "$PREVIEW_URL" --netlify

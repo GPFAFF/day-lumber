@@ -7,13 +7,15 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "test:smoke": "node tests/smoke.mjs"
   },
   "dependencies": {
     "astro": "5.18.2"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.12",
+    "playwright": "1.56.1",
     "typescript": "5.9.3"
   },
   "engines": {

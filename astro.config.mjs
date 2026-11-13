@@ -1,5 +1,16 @@
 import { defineConfig } from 'astro/config';
-import { appendFileSync } from 'node:fs';
+import { appendFileSync, writeFileSync } from 'node:fs';
+
+// Write /version.txt with the commit being built (Netlify sets COMMIT_REF), so CI can wait
+// until a deploy preview serves the pull request's head commit before testing it.
+const buildVersion = {
+  name: 'build-version',
+  hooks: {
+    'astro:build:done': ({ dir }) => {
+      writeFileSync(new URL('version.txt', dir), `${process.env.COMMIT_REF ?? 'local'}\n`);
+    },
+  },
+};
 
 // Send `X-Robots-Tag: noindex` from every deploy except the production deploy of the
 // daylumber.com site. That covers deploy previews, branch deploys, any *.netlify.app
@@ -27,5 +38,5 @@ export default defineConfig({
   site: 'https://daylumber.com',
   output: 'static',
   trailingSlash: 'always',
-  integrations: [noindexOutsideProduction],
+  integrations: [noindexOutsideProduction, buildVersion],
 });
