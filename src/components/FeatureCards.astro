@@ -46,12 +46,14 @@ const { cards } = Astro.props;
     border-radius: 25px;
     margin-bottom: 60px;
   }
-  /* .details-title.title-shep (theme) draws the two green bars under the heading */
+  /* .details-title.title-shep (theme) draws the two green bars at the bottom of this box:
+     20px under the heading text, 30px above the list */
   .feature-card__title {
-    margin: 0;
+    margin: 0 0 30px;
+    padding-bottom: 30px;
   }
   .feature-card__heading {
-    margin: 0 0 50px;
+    margin: 0;
     line-height: 1;
   }
   @media (max-width: 1024px) {
@@ -69,8 +71,8 @@ const { cards } = Astro.props;
     .feature-card__img {
       margin-bottom: 15px;
     }
-    .feature-card__list {
-      margin-top: -30px;
+    .feature-card__title {
+      margin-bottom: 20px;
     }
   }
 </style>
