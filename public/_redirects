@@ -1,6 +1,13 @@
 # Old Yoast sitemap URLs (WordPress) -> generated sitemap
 /sitemap_index.xml   /sitemap.xml   301
-/*-sitemap.xml       /sitemap.xml   301
+/post-sitemap.xml             /sitemap.xml   301
+/page-sitemap.xml             /sitemap.xml   301
+/category-sitemap.xml         /sitemap.xml   301
+/post_tag-sitemap.xml         /sitemap.xml   301
+/author-sitemap.xml           /sitemap.xml   301
+/horseno_header-sitemap.xml   /sitemap.xml   301
+/horseno_footer-sitemap.xml   /sitemap.xml   301
+/horseno_megamenu-sitemap.xml /sitemap.xml   301
 /main-sitemap.xsl    /sitemap.xml   301
 
 # Removed WordPress pages (blog, theme demos, shop) -> closest live page
