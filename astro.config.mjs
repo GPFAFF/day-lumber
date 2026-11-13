@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
-import { writeFileSync } from 'node:fs';
+import { appendFileSync } from 'node:fs';
 
 // Send `X-Robots-Tag: noindex` from every deploy except the production deploy of the
 // daylumber.com site. That covers deploy previews, branch deploys, any *.netlify.app
@@ -16,8 +16,9 @@ const noindexOutsideProduction = {
         logger.info(`indexable build (CONTEXT=${context}, URL=${siteUrl})`);
         return;
       }
-      writeFileSync(new URL('_headers', dir), '/*\n  X-Robots-Tag: noindex, nofollow\n');
-      logger.info(`noindex build (CONTEXT=${context}, URL=${siteUrl || 'unset'}): wrote _headers`);
+      // append to the _headers copied from public/ (cache rules)
+      appendFileSync(new URL('_headers', dir), '\n# non-production deploy: keep out of search results\n/*\n  X-Robots-Tag: noindex, nofollow\n');
+      logger.info(`noindex build (CONTEXT=${context}, URL=${siteUrl || 'unset'}): added X-Robots-Tag to _headers`);
     },
   },
 };

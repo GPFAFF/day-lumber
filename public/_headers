@@ -1,0 +1,28 @@
+# Cache policy for static assets. HTML keeps Netlify's default
+# (max-age=0, must-revalidate) so content updates show immediately.
+# File names aren't fingerprinted, so only files that never change get "immutable".
+# Rules don't overlap: Netlify combines headers when several rules match one path.
+
+# fonts: never change
+/assets/theme/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# images: 30 days, then revalidate in the background
+/assets/img/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
+
+# theme and vendor CSS/JS from the WordPress export: changes only with a deploy
+/assets/theme/assets/css/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+/assets/theme/assets/js/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+/assets/theme/style.css
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+/assets/theme-child/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+/assets/vendor/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+# site.css is edited often: 1 hour
+/assets/css/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
