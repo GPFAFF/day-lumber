@@ -1534,7 +1534,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <h2 class="sec-title el-title text-body title-anime__title">Request A Quote</h2>
 </div>
 <div class="wpcf7">
-<form action="/thanks/" aria-label="Request a quote" class="wpcf7-form" data-netlify="true" method="POST" name="quote" netlify-honeypot="bot-field">
+<form action="/thanks/" aria-label="Request a quote" class="wpcf7-form" data-netlify="true" data-netlify-recaptcha="true" method="POST" name="quote" netlify-honeypot="bot-field">
 <input name="form-name" type="hidden" value="quote"/><p hidden=""><label>Leave this field empty: <input autocomplete="off" name="bot-field" tabindex="-1"/></label></p>
 <div class="row gx-20">
 <div class="col-md-12 form-group">
@@ -1550,8 +1550,9 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <span class="wpcf7-form-control-wrap" data-name="phone"><input aria-invalid="false" aria-required="true" required="" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel form-control" maxlength="400" name="phone" placeholder="Phone Number" aria-label="Phone Number" size="40" type="tel" value=""/></span>
 </div>
 <div class="col-md-12 form-group">
-<span class="wpcf7-form-control-wrap" data-name="message"><input aria-invalid="false" aria-required="true" required="" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" maxlength="400" name="message" placeholder="Message" aria-label="Message" size="40" type="text" value=""/></span>
+<span class="wpcf7-form-control-wrap" data-name="message"><textarea aria-invalid="false" aria-required="true" required="" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" maxlength="2000" name="message" placeholder="Message" aria-label="Message" rows="4"></textarea></span>
 </div>
+<div class="col-md-12 form-group"><div data-netlify-recaptcha="true"></div></div>
 <div class="col-md-12 form-group">
 <button class="vs-btn w-100 justify-content-center" type="submit">
       Submit Now
