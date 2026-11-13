@@ -262,3 +262,25 @@ p a:not([class]),
   color: var(--white-color);
   opacity: 1;
 }
+
+/* reCAPTCHA checkbox: Netlify replaces the inner div with Google's widget (an iframe that can't be
+   restyled). The panel around it matches each form's fields and centers it. Its height is
+   reserved (78px widget + padding) so the form doesn't jump when the widget loads. */
+.captcha-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 98px;
+  padding: 10px;
+}
+/* quote form: dark green panel like the message box */
+.faq-layout1 .captcha-box {
+  background-color: var(--theme-color);
+  border-radius: 24px;
+}
+/* contact form: cream panel with the inputs' thin green border */
+.contact-layout2 .captcha-box {
+  background-color: var(--body-color);
+  border: 1px solid var(--theme-color);
+  border-radius: 6px;
+}
