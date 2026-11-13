@@ -1,0 +1,34 @@
+---
+// Assembles a page: its own <head>, the shared header (with the current nav item marked from the
+// URL), its content, the shared footer, and its closing scripts.
+import header from '../site/partials/header.html?raw';
+import footer from '../site/partials/footer.html?raw';
+import type { SitePage } from '../site';
+
+interface Props {
+  page: SitePage;
+}
+const { page } = Astro.props;
+
+let headerHtml = header;
+if (page.meta.nav) {
+  const { href, pageItem } = page.meta.nav;
+  const current = `current-menu-item page_item${pageItem ? ` page-item-${pageItem}` : ''} current_page_item active`;
+  // desktop and mobile menus both list the item
+  headerHtml = header.replace(
+    /<li class="(menu-item[^"]*)"([^>]*>\s*<a[^>]*href="([^"]+)")/g,
+    (match, cls, rest, linkHref) => (linkHref === href ? `<li class="${cls} ${current}"${rest}` : match),
+  );
+}
+const bodyAttrs = Object.fromEntries([...page.meta.bodyAttrs.matchAll(/([\w:-]+)="([^"]*)"/g)].map((m) => [m[1], m[2]]));
+---
+<!DOCTYPE html>
+<html lang="en-US">
+<head><Fragment set:html={page.head} /></head>
+<body {...bodyAttrs}>
+<Fragment set:html={headerHtml} />
+<Fragment set:html={page.content} />
+{page.meta.footer && <Fragment set:html={footer} />}
+<Fragment set:html={page.tail} />
+</body>
+</html>

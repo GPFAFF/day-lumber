@@ -2,5 +2,15 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "allowJs": true
-  }
+  },
+  "exclude": [
+    "public",
+    "dist",
+    "node_modules"
+  ],
+  "include": [
+    "src",
+    "astro.config.mjs",
+    ".astro/types.d.ts"
+  ]
 }

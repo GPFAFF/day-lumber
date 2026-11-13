@@ -1,0 +1,7 @@
+---
+import Page from '../layouts/Page.astro';
+import { pages } from '../site';
+
+const page = pages.find((p) => p.slug === '404')!;
+---
+<Page page={page} />
