@@ -43,7 +43,6 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 :root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
 /*# sourceURL=global-styles-inline-css */
 </style>
-<link href="/assets/vendor/contact-form-7/includes/css/styles.css" id="contact-form-7-css" media="all" rel="stylesheet" type="text/css"/>
 <link href="/assets/theme/style.css" id="parent-style-css" media="all" rel="stylesheet" type="text/css"/>
 <link href="/assets/theme-child/style.css" id="child-style-css" media="all" rel="stylesheet" type="text/css"/>
 <link href="/assets/vendor/elementor/assets/css/frontend.min.css" id="elementor-frontend-css" media="all" rel="stylesheet" type="text/css"/>
@@ -1418,30 +1417,28 @@ Chicopee, MA 01013														</p>
 <h2 class="sec-title el-title text-title title-anime__title">Drop us a line <span class="title-higlight text-secondary inline">below</span></h2>
 </div>
 <div class="form-style1 ajax-contact wow animate__fadeInUp" data-wow-delay="0.45s">
-<div class="wpcf7 no-js" data-wpcf7-id="1903" dir="ltr" id="wpcf7-f1903-p22-o1" lang="en-US">
-<div class="screen-reader-response"><p aria-atomic="true" aria-live="polite" role="status"></p> <ul></ul></div>
-<form action="/contact-us/?simply_static_page=3004#wpcf7-f1903-p22-o1" aria-label="Contact form" class="wpcf7-form init" data-status="init" method="post" novalidate="novalidate">
-<fieldset class="hidden-fields-container"><input name="_wpcf7" type="hidden" value="1903"/><input name="_wpcf7_version" type="hidden" value="6.1.5"/><input name="_wpcf7_locale" type="hidden" value="en_US"/><input name="_wpcf7_unit_tag" type="hidden" value="wpcf7-f1903-p22-o1"/><input name="_wpcf7_container_post" type="hidden" value="22"/><input name="_wpcf7_posted_data_hash" type="hidden" value=""/>
-</fieldset>
+<div class="wpcf7">
+<form action="/thanks/" aria-label="Contact us" class="wpcf7-form" data-netlify="true" method="POST" name="contact" netlify-honeypot="bot-field">
+<input name="form-name" type="hidden" value="contact"/><p hidden=""><label>Leave this field empty: <input autocomplete="off" name="bot-field" tabindex="-1"/></label></p>
 <div class="row gx-20">
 <div class="col-md-6 form-group">
-<span class="wpcf7-form-control-wrap" data-name="text-221"><input aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" maxlength="400" name="text-221" placeholder="Name" size="40" type="text" value=""/></span>
+<span class="wpcf7-form-control-wrap" data-name="name"><input aria-invalid="false" aria-required="true" required="" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control" maxlength="400" name="name" placeholder="Name" size="40" type="text" value=""/></span>
 <i class="fas fa-user"></i>
 </div>
 <div class="col-md-6 form-group">
-<span class="wpcf7-form-control-wrap" data-name="tel-481"><input aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel form-control" maxlength="400" name="tel-481" placeholder="Phone" size="40" type="tel" value=""/></span>
+<span class="wpcf7-form-control-wrap" data-name="number"><input aria-invalid="false" aria-required="true" required="" class="wpcf7-form-control wpcf7-tel wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-tel form-control" maxlength="400" name="number" placeholder="Phone" size="40" type="tel" value=""/></span>
 </div>
 <!-- Email Full Width -->
 <div class="col-md-12 form-group">
-<span class="wpcf7-form-control-wrap" data-name="email-651"><input aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email form-control" maxlength="400" name="email-651" placeholder="Email Address" size="40" type="email" value=""/></span>
+<span class="wpcf7-form-control-wrap" data-name="email"><input aria-invalid="false" aria-required="true" required="" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email form-control" maxlength="400" name="email" placeholder="Email Address" size="40" type="email" value=""/></span>
 </div>
 <div class="col-md-12 form-group">
-<span class="wpcf7-form-control-wrap" data-name="textarea-600"><textarea aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required form-control" cols="40" maxlength="2000" name="textarea-600" placeholder="Message Here..." rows="10"></textarea></span>
+<span class="wpcf7-form-control-wrap" data-name="message"><textarea aria-invalid="false" aria-required="true" required="" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required form-control" cols="40" maxlength="2000" name="message" placeholder="Message Here..." rows="10"></textarea></span>
 </div>
 <div class="col-md-12 form-group">
 <button class="vs-btn justify-content-center" type="submit">Send Message</button>
 </div>
-</div><div aria-hidden="true" class="wpcf7-response-output"></div>
+</div>
 </form>
 </div> <span class="shape-mockup z-index1 wow animate__fadeInRight d-xxl-block d-none" data-wow-delay="0.80s" style="right: 0px; bottom: 0px;">
 <img alt="contact shape 2 1" decoding="async" src="/assets/img/2025/08/contact-shape-2-1.png"/> </span>
@@ -1487,17 +1484,7 @@ Chicopee, MA 01013														</p>
 <div class="elementor-element elementor-element-baa5456 elementor-widget elementor-widget-shortcode" data-e-type="widget" data-element_type="widget" data-id="baa5456" data-widget_type="shortcode.default">
 <div class="elementor-widget-container">
 <div class="elementor-shortcode">
-<div class="wpcf7 no-js" data-wpcf7-id="732" dir="ltr" id="wpcf7-f732-o2" lang="en-US">
-<div class="screen-reader-response"><p aria-atomic="true" aria-live="polite" role="status"></p> <ul></ul></div>
-<form action="/contact-us/?simply_static_page=3004#wpcf7-f732-o2" aria-label="Contact form" class="wpcf7-form init" data-status="init" method="post" novalidate="novalidate">
-<fieldset class="hidden-fields-container"><input name="_wpcf7" type="hidden" value="732"/><input name="_wpcf7_version" type="hidden" value="6.1.5"/><input name="_wpcf7_locale" type="hidden" value="en_US"/><input name="_wpcf7_unit_tag" type="hidden" value="wpcf7-f732-o2"/><input name="_wpcf7_container_post" type="hidden" value="0"/><input name="_wpcf7_posted_data_hash" type="hidden" value=""/>
-</fieldset>
-<div class="search-btn">
-<span class="wpcf7-form-control-wrap" data-name="email-288"><input aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email form-control" maxlength="400" name="email-288" placeholder="Your Email Address" size="40" type="email" value=""/></span>
-<button class="vs-btn" type="submit"><i class="fa-solid fa-paper-plane"></i> Subscribe</button>
-</div><div aria-hidden="true" class="wpcf7-response-output"></div>
-</form>
-</div>
+
 </div>
 </div>
 </div>
@@ -1716,28 +1703,6 @@ document.addEventListener("DOMContentLoaded", function () {
 </script><link href="/assets/vendor/elementor/assets/css/widget-image.min.css" id="widget-image-css" media="all" rel="stylesheet" type="text/css"/>
 <link href="/assets/vendor/horseno-core/assets/css/style.css" id="horseno-widget-style-css" media="all" rel="stylesheet" type="text/css"/>
 <link href="/assets/vendor/horseno-core/assets/css/addons.css" id="horseno-addon-style-css" media="all" rel="stylesheet" type="text/css"/>
-<script id="wp-hooks-js" src="/assets/vendor/core/js/dist/hooks.min.js" type="text/javascript"></script>
-<script id="wp-i18n-js" src="/assets/vendor/core/js/dist/i18n.min.js" type="text/javascript"></script>
-<script id="wp-i18n-js-after" type="text/javascript">
-/* <![CDATA[ */
-wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
-//# sourceURL=wp-i18n-js-after
-/* ]]> */
-</script>
-<script id="swv-js" src="/assets/vendor/contact-form-7/includes/swv/js/index.js" type="text/javascript"></script>
-<script id="contact-form-7-js-before" type="text/javascript">
-/* <![CDATA[ */
-var wpcf7 = {
-    "api": {
-        "root": "\/wp-json\/",
-        "namespace": "contact-form-7\/v1"
-    },
-    "cached": 1
-};
-//# sourceURL=contact-form-7-js-before
-/* ]]> */
-</script>
-<script id="contact-form-7-js" src="/assets/vendor/contact-form-7/includes/js/index.js" type="text/javascript"></script>
 <script id="elementor-webpack-runtime-js" src="/assets/vendor/elementor/assets/js/webpack.runtime.min.js" type="text/javascript"></script>
 <script id="elementor-frontend-modules-js" src="/assets/vendor/elementor/assets/js/frontend-modules.min.js" type="text/javascript"></script>
 <script id="jquery-ui-core-js" src="/assets/vendor/core/js/jquery/ui/core.min.js" type="text/javascript"></script>
