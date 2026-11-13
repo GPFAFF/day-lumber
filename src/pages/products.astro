@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+import PageBanner from '../components/PageBanner.astro';
+import FeatureSplit from '../components/FeatureSplit.astro';
+import FeatureCards from '../components/FeatureCards.astro';
+---
+<Base
+  title="Products - Day Lumber"
+  description="Custom and industry standard wood pallets and skids in any size, block and stringer pallets, plywood crates and boxes, and IPPC certified export packaging."
+  ogImage="/assets/img/2026/03/day-lumber-pallets.jpg"
+  published={new Date('2026-03-03')}
+  modified={new Date('2026-03-03')}
+  breadcrumb={[{ name: 'Products' }]}
+>
+  <PageBanner title="Products" />
+  <FeatureSplit
+    heading="Pallets & Skids"
+    items={[
+      'Any/All Sizes',
+      'Customized Pallets & Skids',
+      'Industry Standard Pallets & Skids',
+      'Block Pallets',
+      'Stringer Pallets',
+      'Tops and Covers',
+      'Hardwood',
+      'Band Notch & Four Way Notch',
+      'Stenciling',
+      'Color Coding',
+      'Chamfer',
+      'Screw Nails or Ring Nails',
+      'Certified for Military Specifications',
+      'Certified for IPPC for International Exports',
+    ]}
+    image={{ src: '/assets/img/2026/03/day-lumber-pallets.jpg', alt: 'Tall stacks of new wood pallets' }}
+    imageHeight={500}
+    eager
+  />
+  <FeatureCards
+    cards={[
+      {
+        heading: 'Plywood Crates & Boxes',
+        items: [
+          'High quality agency stamped plywood and OSB',
+          'Foam Inserts',
+          'Metal Inserts',
+          'Shook boxes and cleated boxes',
+          'Painting',
+          'Shipping Crates',
+          'International Export Certification',
+          'Certified for Military Specifications',
+        ],
+        image: { src: '/assets/img/2026/03/day-lumber-crates.jpg', alt: 'Wooden crate frames being built in the shop' },
+      },
+      {
+        heading: 'Collapsible Bins',
+        items: [
+          'Bins built to spec for the Cranberry Industry',
+          'Made with high quality dense hardwood',
+          'Nylon webbing',
+          'Agricultural bins',
+          'Customized designs',
+        ],
+        image: { src: '/assets/img/2026/03/day-lumber-bins.jpg', alt: 'Stacked collapsible wooden bins' },
+      },
+    ]}
+  />
+  <FeatureSplit
+    heading="Cushioned Pallets for Specialty Special Shipping needs"
+    items={[
+      'We can design or use your design to create any wooden, foam cushioned pallet or box',
+      'We are able to heat treat any size pallet, skid or wooden box for overseas shipment',
+    ]}
+    image={{ src: '/assets/img/2026/03/day-lumber-cushioned.jpg', alt: 'Stacks of pallets with foam cushion blocks' }}
+    imageHeight={500}
+  />
+</Base>

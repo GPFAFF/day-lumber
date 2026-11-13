@@ -23,7 +23,7 @@ import { business, footerGallery, footerLinks, footerServices } from '../data/si
       <div class="widget widget_nav_menu footer-widget">
         <h3 class="widget_title">Services</h3>
         <ul class="menu">
-          {footerServices.map((s) => <li><p><i aria-hidden="true" class="far fa-angle-right"></i> {s}</p></li>)}
+          {footerServices.map((s) => <li><p><i aria-hidden="true" class="far fa-circle"></i> {s}</p></li>)}
         </ul>
       </div>
     </div>
@@ -114,6 +114,10 @@ import { business, footerGallery, footerLinks, footerServices } from '../data/si
   }
   .footer-col--services p {
     color: var(--body-color);
+  }
+  .footer-col--services i {
+    font-size: 7px;
+    margin-right: 8px;
   }
   .footer-contact {
     background-color: #166b01;

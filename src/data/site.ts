@@ -126,3 +126,20 @@ export const localBusinessSchema = {
   areaServed: ['Massachusetts', 'Connecticut', 'Rhode Island'].map((name) => ({ '@type': 'State', name })),
   hasMap: 'https://www.google.com/maps?cid=9970803211559301748',
 };
+
+export const team = [
+  {
+    name: 'Matt Grodd',
+    role: 'President',
+    photo: '/assets/img/2026/04/IMG_1117-scaled.jpeg',
+    email: 'matt@daylumber.com',
+    phone: '413-244-6093',
+  },
+  {
+    name: 'Todd Young',
+    role: 'General Manager',
+    photo: '/assets/img/2026/04/IMG_1119-scaled.jpeg',
+    email: 'todd@daylumber.com',
+    phone: '413-563-9107',
+  },
+];

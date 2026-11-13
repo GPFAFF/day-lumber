@@ -1,0 +1,81 @@
+---
+// Photo collage with the "95+ Years of Experience" badge beside a heading, optional paragraph,
+// bullet list and button (homepage "Why Day Lumber?" and About page "History").
+interface Props {
+  /** Small label above the heading, e.g. "About Us". */
+  subtitle?: string;
+  /** Heading; the highlight part is shown in green. */
+  heading: string;
+  highlight?: string;
+  text?: string;
+  items: string[];
+  cta: { label: string; href: string };
+  /** [large photo, small photo, small photo] */
+  photos: { src: string; alt: string }[];
+}
+const { subtitle, heading, highlight, text, items, cta, photos } = Astro.props;
+const [main, ...small] = photos;
+---
+<div class="container space-bottom">
+  <div class="row gx-60 g-5 justify-content-center align-items-center">
+    <div class="col-xl-6">
+      <div class="img-box1 wow animate__fadeInUp" data-wow-delay="0.55s">
+        <div class="text-box">
+          <div class="box-body">
+            <span class="text-box__number">95+</span>
+            <p class="text-box__title h3">Years of Experience</p>
+          </div>
+        </div>
+        <div class="box-inner">
+          <div class="img1 wow animate__fadeInUp" data-wow-delay="0.25s"><img alt={main.alt} loading="lazy" src={main.src} /></div>
+          <div class="img2 wow animate__fadeInUp" data-wow-delay="0.45s">
+            {small.map(({ src, alt }) => <div class="img"><img alt={alt} loading="lazy" src={src} /></div>)}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="about-content">
+        <div class="wow animate__fadeInUp" data-wow-delay="0.35s">
+          <div class="title-area">
+            {subtitle && (
+              <span class="sec-subtitle text-theme">
+                <img alt="" src="/assets/img/2025/07/left-title-shape.svg" /> {subtitle} <img alt="" src="/assets/img/2025/07/right-title-shape.svg" />
+              </span>
+            )}
+            <h2 class="sec-title text-title about-intro__title">{heading}{highlight && <Fragment> <span class="title-higlight text-secondary inline">{highlight}</span></Fragment>}</h2>
+          </div>
+          {text && <p class="about-text wow animate__fadeInUp" data-wow-delay="0.55s">{text}</p>}
+        </div>
+        <div class="about-content wow animate__fadeInUp" data-wow-delay="0.75s">
+          <div class="about-box">
+            <div class="about-video"></div>
+            <ul class="about-list">
+              {items.map((item) => (
+                <li class="list-item">
+                  <span class="icon">
+                    <svg aria-hidden="true" fill="none" height="16" viewBox="0 0 16 16" width="16"><circle cx="8" cy="8" fill="var(--theme-color)" r="8"></circle><circle cx="8" cy="8" fill="var(--theme-color2)" r="3"></circle></svg>
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div class="about-inner mb-0 wow animate__fadeInUp" data-wow-delay="0.95s">
+          <a class="vs-btn" href={cta.href}>{cta.label}<i aria-hidden="true" class="far fa-long-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .about-intro__title {
+    margin: 0;
+  }
+  /* the theme's video-thumbnail slot is unused; keep its one line of height so spacing matches */
+  .about-video {
+    height: 1lh;
+  }
+</style>

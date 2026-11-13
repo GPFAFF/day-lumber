@@ -1,0 +1,56 @@
+---
+// Homepage carousel of the newest Resource posts.
+import { getCollection } from 'astro:content';
+import { thumbnail } from '../lib/thumbnail.mjs';
+
+interface Props {
+  count?: number;
+}
+const { count = 6 } = Astro.props;
+const posts = (await getCollection('posts')).sort((a, b) => +b.data.published - +a.data.published).slice(0, count);
+const short = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+---
+<section class="blog-layout1 space-extra-bottom">
+  <div class="container">
+    <div class="row align-items-end">
+      <div class="col-xl-6 col-lg-7 col-auto">
+        <div class="title-area mt-n1">
+          <span class="sec-subtitle text-theme">
+            <img alt="" src="/assets/img/2025/07/left-title-shape.svg" /> News And Blog <img alt="" src="/assets/img/2025/07/right-title-shape.svg" />
+          </span>
+          <h2 class="sec-title text-title">Our Latest<span class="title-higlight text-secondary inline"> News </span>And Blogs</h2>
+        </div>
+      </div>
+      <div class="col-xl-6 col-lg-5 col-auto d-none d-lg-block">
+        <div class="title-area mb-60">
+          <div class="d-flex justify-content-end align-items-center gap-2">
+            <button class="icon-btn2" data-slick-prev=".blog-carousel" aria-label="Previous slide"><i aria-hidden="true" class="fal fa-long-arrow-left"></i></button>
+            <button class="icon-btn2" data-slick-next=".blog-carousel" aria-label="Next slide"><i aria-hidden="true" class="fal fa-long-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row blog-carousel wow animate__fadeInUp" data-slick-autoplay="true" data-slide-to-show="3">
+      {posts.map((post) => {
+        const href = `/${post.id}/`;
+        return (
+          <div class="col-lg-4 col-md-6">
+            <div class="vs-blog blog-style1 has-thumb">
+              {post.data.image && (
+                <div class="blog-img w-img">
+                  <a href={href} tabindex="-1"><img alt={post.data.imageAlt} height="280" loading="lazy" src={thumbnail(post.data.image, '390x280')} width="390" /></a>
+                  <span class="blog-date">{short(post.data.published)}</span>
+                </div>
+              )}
+              <div class="blog-content">
+                <div class="blog-meta"></div>
+                <h3 class="blog-title"><a href={href}>{post.data.heading}</a></h3>
+                <a class="vs-btn" href={href} aria-label={`Read more: ${post.data.heading}`}>Read More<i aria-hidden="true" class="fa-regular fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>

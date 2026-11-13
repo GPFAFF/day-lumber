@@ -1,9 +1,15 @@
 ---
 // "Moments With Daylumber" photo grid with lightbox (wide, four small, wide).
 import { gallery } from '../data/site';
+
+interface Props {
+  /** Extra space under the wide photos, which also makes the small photos taller (homepage). */
+  spaced?: boolean;
+}
+const { spaced = false } = Astro.props;
 const wide = new Set([0, gallery.length - 1]);
 ---
-<section class="gallery-layout1 space">
+<section class:list={['gallery-layout1 space', { 'gallery--spaced': spaced }]}>
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-xl-6">
@@ -29,3 +35,9 @@ const wide = new Set([0, gallery.length - 1]);
     </div>
   </div>
 </section>
+
+<style>
+  .gallery--spaced .col-lg-6 {
+    margin-bottom: 20px;
+  }
+</style>

@@ -4,6 +4,16 @@
 import FaqAccordion from './FaqAccordion.astro';
 import { generalFaqs } from '../data/site';
 
+interface Props {
+  /**
+   * 'band': 80px gap below, for the form that hangs below the band (landing pages).
+   * 'flush': no gap below (homepage, followed by the gallery).
+   * 'page': the /quote/ page, where the section is the main content (less padding, form not offset).
+   */
+  variant?: 'band' | 'flush' | 'page';
+}
+const { variant = 'band' } = Astro.props;
+
 const fields = [
   { name: 'name', label: 'Customer', type: 'text' },
   { name: 'contact', label: 'Contact Name', type: 'text' },
@@ -11,7 +21,7 @@ const fields = [
   { name: 'phone', label: 'Phone Number', type: 'tel' },
 ] as const;
 ---
-<div class="quote-band">
+<div class:list={['quote-band', `quote-band--${variant}`]}>
   <section class="faq-layout1 bg-theme position-relative">
     <div class="container">
       <div class="row gx-60">
@@ -59,7 +69,15 @@ const fields = [
 </div>
 
 <style>
-  .quote-band {
+  .quote-band--band {
     padding-bottom: 80px;
+  }
+  .quote-band--page .faq-layout1 {
+    margin-bottom: 0 !important;
+    padding: 50px 0;
+  }
+  /* the theme drops the form below the band so it overlaps the next section; nothing follows it here */
+  .quote-band--page .form-style1 {
+    transform: translateY(0);
   }
 </style>

@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+import PageBanner from '../components/PageBanner.astro';
+import TeamMembers from '../components/TeamMembers.astro';
+---
+<Base
+  title="Team - Day Lumber"
+  description="Meet the Day Lumber team: Matt Grodd, President, and Todd Young, General Manager, at our custom pallet and skid manufacturing facility in Chicopee, MA."
+  ogImage="/assets/img/2026/04/IMG_1117-scaled.jpeg"
+  published={new Date('2025-07-17')}
+  modified={new Date('2026-05-29')}
+  breadcrumb={[{ name: 'Team' }]}
+>
+  <PageBanner title="Team" image="/assets/img/2026/04/IMG_1112-scaled.webp" />
+  <TeamMembers />
+</Base>
