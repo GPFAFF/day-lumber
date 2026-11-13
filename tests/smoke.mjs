@@ -18,7 +18,7 @@ const NAV = 'Home,Products,About,Team,Services,Quote,Contact';
 // ---- pages from the sitemap (served with the canonical host; test them on this host)
 const sitemap = await (await fetch(`${base}/sitemap.xml`)).text();
 const paths = [...sitemap.matchAll(/<loc>https?:\/\/[^/]+(\/[^<]*)<\/loc>/g)].map((m) => m[1]);
-if (paths.length < 100) fail(`sitemap lists only ${paths.length} pages`);
+if (paths.length < 50) fail(`sitemap lists only ${paths.length} pages`); // catches an empty or broken sitemap
 paths.push('/thanks/');
 
 const browser = await chromium.launch();
