@@ -1,28 +1,59 @@
 /* Site-wide overrides, loaded after the theme stylesheets on every page. */
 
-/* Buttons (.vs-btn): the theme reveals the hover color with two overlays that flip
-   in on the X and Y axes, an "X" shape that flips back out on mouse-out. Keep each
-   section's overlay color but fade it in and out instead. */
-.vs-btn::before,
+/* Buttons (.vs-btn)
+   The theme flips two contrasting overlays in on the X and Y axes (an "X" shape).
+   Instead, a lighter shade of the button's own color wipes in from the right; on
+   mouse-out it keeps moving left as it retreats. The shade is a white layer over
+   the button's color: 10% white keeps cream text on the green buttons above 4.5:1
+   contrast (#166b01 -> #2d7a1a, 4.56:1). Cream buttons are already near white, so
+   their shade is solid white. Text keeps its resting color on hover. */
+.vs-btn::before {
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: rgba(255, 255, 255, 0.1) !important;
+  opacity: 1;
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
 .vs-btn::after {
-  transform: none;
-  opacity: 0;
-  transition: opacity 0.25s ease;
+  display: none;
 }
 .vs-btn:hover::before,
-.vs-btn:hover::after,
-.vs-btn:focus-visible::before,
-.vs-btn:focus-visible::after {
-  transform: none;
-  opacity: 1;
+.vs-btn:focus-visible::before {
+  transform: scaleX(1);
+  transform-origin: right center;
 }
-.vs-btn {
-  transition: color 0.25s ease;
+
+/* cream quote-form button: lighter shade of cream = white */
+.form-style1 .vs-btn::before {
+  background: #ffffff !important;
 }
+/* dark green contact-form button keeps the 10% white shade; the theme also swaps
+   this button's own background to cream on hover, which would hide its cream text */
+.contact-layout2 .form-style1 .vs-btn::before {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+.contact-layout2 .form-style1 .vs-btn:hover,
+.contact-layout2 .form-style1 .vs-btn:focus-visible {
+  background-color: var(--theme-color);
+}
+
+/* keep each button's resting text color on hover (the theme's hover colors were
+   chosen for its contrasting overlays) */
+.vs-btn:hover,
+.vs-btn:focus-visible {
+  color: var(--body-color);
+}
+.form-style1 .vs-btn:hover,
+.form-style1 .vs-btn:focus-visible {
+  color: var(--title-color);
+}
+.contact-layout2 .form-style1 .vs-btn:hover,
+.contact-layout2 .form-style1 .vs-btn:focus-visible {
+  color: var(--theme-color2);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .vs-btn,
-  .vs-btn::before,
-  .vs-btn::after {
+  .vs-btn::before {
     transition: none;
   }
 }
