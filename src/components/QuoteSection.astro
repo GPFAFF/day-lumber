@@ -8,7 +8,7 @@ interface Props {
   /**
    * 'band': 80px gap below, for the form that hangs below the band (landing pages).
    * 'flush': no gap below (homepage, followed by the gallery).
-   * 'page': the /quote/ page, where the section is the main content (less padding, form not offset).
+   * 'page': the /quote/ page, where the section is the main content (beige gap around the band, less padding, form not offset).
    */
   variant?: 'band' | 'flush' | 'page';
 }
@@ -69,8 +69,22 @@ const fields = [
 </div>
 
 <style>
+  /* keep the decorative shapes (20% opacity lines, dots) behind the form and FAQs instead of over them */
+  .faq-layout1 > .container {
+    position: relative;
+    z-index: 1;
+  }
   .quote-band--band {
     padding-bottom: 80px;
+  }
+  /* beige gap above and below the band, like the content sections on the other inner pages */
+  .quote-band--page {
+    padding: var(--section-space) 0;
+  }
+  @media (max-width: 991px) {
+    .quote-band--page {
+      padding: var(--section-space-mobile) 0;
+    }
   }
   .quote-band--page .faq-layout1 {
     margin-bottom: 0 !important;
