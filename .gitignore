@@ -1,6 +1,7 @@
 node_modules/
 dist/
-site/data/webpack.json
-/npm-debug.log
-yarn-error.log
-.env
+.astro/
+.DS_Store
+
+# Local Netlify folder
+.netlify
