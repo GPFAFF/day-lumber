@@ -2,3 +2,39 @@
 /sitemap_index.xml   /sitemap.xml   301
 /*-sitemap.xml       /sitemap.xml   301
 /main-sitemap.xsl    /sitemap.xml   301
+
+# Removed WordPress pages (blog, theme demos, shop) -> closest live page
+/blog-grid/            /                301
+/blog-grid-two/        /                301
+/blog-list/            /                301
+/blog/*                /                301
+/category/*            /                301
+/tag/*                 /                301
+/author/*              /                301
+/2026/*                /                301
+/2025/*                /                301
+/feed/*                /                301
+/comments/feed/*       /                301
+/home-two/             /                301
+/home-three/           /                301
+/sample-page/          /                301
+/beispiel-seite/       /                301
+/portfolios/           /products/       301
+/portfolio-details/    /products/       301
+/service-details/      /services/       301
+/shop/                 /products/       301
+/cart/                 /products/       301
+/checkout/             /products/       301
+/my-account/           /                301
+/horseno-shop/         /products/       301
+/horseno-cart/         /products/       301
+/horseno-checkout/     /products/       301
+/horseno-my-account/   /                301
+/horseno-wishlist/     /products/       301
+/matt-grodd/           /team/           301
+
+# Earlier Hugo site URLs (served by this Netlify site before WordPress)
+/about/                /about-us/       301
+/contact/              /contact-us/     301
+/request-quote/        /quote/          301
+/post/*                /                301
