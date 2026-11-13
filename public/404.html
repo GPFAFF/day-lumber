@@ -1100,39 +1100,6 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </section>
 <!-- Error End -->
 <script>
-    document.querySelectorAll('.elementor-element-cfab41d a').forEach(function(link){
-    let p = document.createElement('p');
-    p.innerHTML = link.innerHTML;
-    link.parentNode.replaceChild(p, link);
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  document.querySelectorAll(".team-content").forEach(function(box){
-
-    let name = box.querySelector(".team-title a").textContent.trim();
-    let contact = document.createElement("p");
-
-    if(name === "Matt Grodd"){
-      contact.innerHTML = `
-      Email: <a href="mailto:matt@daylumber.com">matt@daylumber.com</a><br>
-      Phone: <a href="tel:413-244-6093">413-244-6093</a>`;
-    }
-
-    if(name === "Todd Young"){
-      contact.innerHTML = `
-      Email: <a href="mailto:todd@daylumber.com">todd@daylumber.com</a><br>
-      Phone: <a href="tel:413-563-9107">413-563-9107</a>`;
-    }
-
-    box.appendChild(contact);
-
-  });
-
-});
-</script>
-<script>
     document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelectorAll('.elementor-element-cfab41d i.fa-angle-right').forEach(function(icon) {

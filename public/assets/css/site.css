@@ -342,3 +342,23 @@ p a:not([class]),
 .back-to-top .progress-circle circle.progress {
   background-color: transparent;
 }
+
+/* Mobile/tablet spacing (#60) */
+@media (max-width: 1199px) {
+  /* FAQ column stacks under the quote form: drop most of its 80-120px top padding */
+  .faq-layout1 .col-xl-6.space {
+    padding-top: 40px;
+  }
+}
+@media (max-width: 767px) {
+  /* smaller back-to-top button, tucked into the corner so it covers less text */
+  .back-to-top {
+    --back-to-top-size: 46px;
+    bottom: 16px;
+    right: 12px;
+  }
+}
+/* Team names were links (to the homepage) styled white; they're plain headings now */
+.team-content .team-title {
+  color: var(--white-color);
+}
