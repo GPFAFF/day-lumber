@@ -327,3 +327,18 @@ a#dropdownMenuLink {
     transition: none;
   }
 }
+
+/* Accessibility (#54) */
+/* Links inside running text must be distinguishable without color (WCAG 1.4.1). */
+p a:not([class]),
+.accordion-body a:not([class]),
+.error-text a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+/* The progress ring's circle has class "progress", which picks up Bootstrap's
+   .progress background (#e9ecef). SVG ignores it, but contrast checkers read it as
+   the background of the white percentage text; the real background is the green button. */
+.back-to-top .progress-circle circle.progress {
+  background-color: transparent;
+}
