@@ -65,7 +65,7 @@ const latest = others.slice(0, 3);
                   <div class="recent-post">
                     {p.data.image && (
                       <div class="media-img">
-                        <a href={`/${p.id}/`} tabindex="-1"><img alt="" decoding="async" height="100" loading="lazy" src={thumbnail(p.data.image)} width="100" /></a>
+                        <a href={`/${p.id}/`}><img alt={p.data.heading} decoding="async" height="100" loading="lazy" src={thumbnail(p.data.image)} width="100" /></a>
                       </div>
                     )}
                     <div class="media-body">

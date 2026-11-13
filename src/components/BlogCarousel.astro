@@ -38,7 +38,7 @@ const short = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 
             <div class="vs-blog blog-style1 has-thumb">
               {post.data.image && (
                 <div class="blog-img w-img">
-                  <a href={href} tabindex="-1"><img alt={post.data.imageAlt} height="280" loading="lazy" src={thumbnail(post.data.image, '390x280')} width="390" /></a>
+                  <a href={href}><img alt={post.data.imageAlt || post.data.heading} height="280" loading="lazy" src={thumbnail(post.data.image, '390x280')} width="390" /></a>
                   <span class="blog-date">{short(post.data.published)}</span>
                 </div>
               )}
