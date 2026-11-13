@@ -23,6 +23,7 @@ npm run preview   # serves dist/
 | `public/assets/img/` | images (formerly `wp-content/uploads/`) |
 | `public/assets/theme/`, `theme-child/` | Horseno theme CSS/JS/fonts |
 | `public/assets/vendor/` | Elementor, horseno-core, safe-svg, WordPress core (jQuery etc.) |
+| `public/assets/css/site.css` | site-wide CSS overrides, loaded after the theme on every page; put new global styles here |
 | `public/_redirects` | 301s for removed WordPress URLs, old Hugo URLs and old sitemap URLs |
 | `src/pages/sitemap.xml.ts` | builds `/sitemap.xml` from every page in `public/` (skips `noindex` pages) |
 | `astro.config.mjs` | writes `dist/_headers` with `X-Robots-Tag: noindex` on every build except the production build of daylumber.com |
