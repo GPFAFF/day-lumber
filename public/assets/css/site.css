@@ -6,7 +6,7 @@
 	position:relative;
 }
 .page-id-2737 .breadcumb-wrapper{
-	    background-image: url(/assets/img/2026/04/IMG_1112-scaled.jpeg) !important;
+	    background-image: url(/assets/img/2026/04/IMG_1112-scaled.webp) !important;
 }
 
 .page-id-2737 .breadcumb-wrapper::before{
@@ -91,7 +91,7 @@ content:'';
 	background-color: #166b01 !important;
 }
 .breadcumb-wrapper {
-    background-image: url(/assets/img/2026/03/pallets.png) !important;
+    background-image: url(/assets/img/2026/03/pallets.webp) !important;
 }
 :root {
     --vs-secondary-color: #166b01 !important;
