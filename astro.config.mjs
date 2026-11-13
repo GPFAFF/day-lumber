@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import { appendFileSync, writeFileSync } from 'node:fs';
+import rehypeImages from './src/lib/rehype-images.mjs';
 
 // Write /version.txt with the commit being built (Netlify sets COMMIT_REF), so CI can wait
 // until a deploy preview serves the pull request's head commit before testing it.
@@ -39,4 +40,5 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'always',
   integrations: [noindexOutsideProduction, buildVersion],
+  markdown: { rehypePlugins: [rehypeImages] },
 });

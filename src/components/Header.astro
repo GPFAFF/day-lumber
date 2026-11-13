@@ -1,0 +1,118 @@
+---
+// Site header: top bar, logo, main nav, mobile menu and the desktop side menu. The nav item for
+// the current URL is marked active.
+import { getCollection } from 'astro:content';
+import { business, nav } from '../data/site';
+import { formatDate } from '../lib/format';
+
+const path = Astro.url.pathname;
+const recent = (await getCollection('posts')).sort((a, b) => +b.data.published - +a.data.published).slice(0, 6);
+const isCurrent = (href: string) => href === path;
+---
+<header class="header">
+  <div class="vs-menu-wrapper">
+    <div class="vs-menu-area text-center">
+      <div class="mobile-logo">
+        <a href="/"><img alt="Day Lumber" class="logo" height="60" src={business.logoLight} width="220" /></a>
+        <button class="vs-menu-toggle" aria-label="Close menu"><i aria-hidden="true" class="fal fa-times"></i></button>
+      </div>
+      <div class="vs-mobile-menu">
+        <ul id="menu-main-menu">
+          {nav.map(({ label, href }) => (
+            <li class:list={['menu-item nav-item', { 'current-menu-item active': isCurrent(href) }]}>
+              <a class="nav-links" href={href} aria-current={isCurrent(href) ? 'page' : undefined}>{label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidemenu-wrapper d-none d-lg-block">
+    <div class="sidemenu-content">
+      <button class="closeButton sideMenuCls" aria-label="Close menu"><i aria-hidden="true" class="far fa-times"></i></button>
+      <div class="widget">
+        <div class="vs-widget-about">
+          <div class="mb-4"><a href="/"><img alt="Day Lumber" class="logo" height="60" src={business.logoLight} width="220" /></a></div>
+          <p class="sidemenu-text">{business.tagline}</p>
+        </div>
+      </div>
+      <div class="widget">
+        <div class="widget footer-widget">
+          <div class="recent-post-wrap">
+            {recent.map((post) => (
+              <div class="recent-post">
+                {post.data.image && (
+                  <div class="media-img">
+                    <a href={`/${post.id}/`} tabindex="-1"><img alt="" decoding="async" height="90" loading="lazy" src={post.data.image} width="90" /></a>
+                  </div>
+                )}
+                <div class="media-body">
+                  <h4 class="post-title"><a href={`/${post.id}/`}>{post.data.heading}</a></h4>
+                  <div class="recent-post-meta"><i aria-hidden="true" class="fas fa-calendar-alt"></i>{formatDate(post.data.published)}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="widget">
+        <h4 class="widget_title">Office Maps</h4>
+        <div class="footer-map">
+          <iframe allowfullscreen="" height="150" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src={business.mapEmbed} style="border:0;" title="Day Lumber office location map" width="200"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="vs-header header-layout1">
+    <div class="header-top">
+      <div class="container">
+        <div class="row justify-content-md-between justify-content-center align-items-center">
+          <div class="col-auto">
+            <div class="header-links d-md-inline d-none">
+              <ul>
+                <li class="d-lg-inline d-none"><i aria-hidden="true" class="fas fa-phone-alt"></i><a href={business.phoneHref}>{business.phone}</a></li>
+                <li class="d-lg-inline d-none"><i aria-hidden="true" class="fas fa-envelope"></i><a href={`mailto:${business.email}`}>{business.email}</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sticky-wrapper header-bottom">
+      <div class="sticky-active">
+        <div class="container">
+          <div class="menu-top">
+            <div class="row justify-content-between align-items-center gx-sm-0">
+              <div class="col-auto">
+                <div class="header-logo">
+                  <a href="/"><img alt="Day Lumber" class="logo" height="70" src={business.logo} width="260" /></a>
+                </div>
+              </div>
+              <div class="col-auto">
+                <nav class="main-menu menu-style1 d-none d-lg-block" aria-label="Main">
+                  <ul class="menu" id="menu-main-menu-1">
+                    {nav.map(({ label, href }) => (
+                      <li class:list={['menu-item nav-item', { 'current-menu-item active': isCurrent(href) }]}>
+                        <a class="nav-links" href={href} aria-current={isCurrent(href) ? 'page' : undefined}>{label}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+              </div>
+              <div class="col-auto">
+                <div class="menu-btns">
+                  <div class="header-btns">
+                    <button class="vs-icon style3 sideMenuToggler d-none d-lg-inline-flex" aria-label="Open menu"><i aria-hidden="true" class="far fa-bars"></i></button>
+                    <button class="vs-menu-toggle d-inline-block d-lg-none" aria-label="Open menu"><i aria-hidden="true" class="fal fa-bars"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

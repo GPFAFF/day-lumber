@@ -1,0 +1,31 @@
+---
+// "Moments With Daylumber" photo grid with lightbox (wide, four small, wide).
+import { gallery } from '../data/site';
+const wide = new Set([0, gallery.length - 1]);
+---
+<section class="gallery-layout1 space">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-6">
+        <div class="title-area text-center">
+          <span class="sec-subtitle text-theme">
+            <img alt="" src="/assets/img/2025/07/left-title-shape.svg" /> Gallery <img alt="" src="/assets/img/2025/07/right-title-shape.svg" />
+          </span>
+          <h2 class="sec-title text-title">Moments With Daylumber</h2>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      {gallery.map(({ src, alt }, i) => (
+        <div class={wide.has(i) ? 'col-lg-6 d-md-block d-none' : 'col-lg-3 col-md-6 gallery-inner'}>
+          <div class="gallery-box mb-30 wow animate__fadeInUp" data-wow-delay={`${0.1 * (i + 1)}s`}>
+            <div class="gallery-img">
+              <img alt={alt} loading="lazy" src={src} />
+              <a class="gal-btn popup-image" href={src} aria-label={`Enlarge photo: ${alt}`}><i aria-hidden="true" class="fal fa-plus"></i></a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

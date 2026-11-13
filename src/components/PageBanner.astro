@@ -1,0 +1,22 @@
+---
+// Photo banner with the page title and a Home > page breadcrumb (inner pages and posts).
+interface Props {
+  /** Large banner text. */
+  title: string;
+  /** Last breadcrumb item; defaults to the title. */
+  current?: string;
+}
+const { title, current = title } = Astro.props;
+---
+<div class="breadcumb-wrapper background-image">
+  <div class="container z-index-common">
+    <div class="breadcumb-content">
+      <div class="breadcumb-title h1">{title}</div>
+      <nav class="breadcumb-menu-wrap" aria-label="Breadcrumb">
+        <div class="breadcumb-menu">
+          <span><a href="/">Home</a></span><span class="active" aria-current="page">{current}</span>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>

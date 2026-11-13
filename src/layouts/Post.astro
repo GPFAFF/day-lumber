@@ -1,0 +1,96 @@
+---
+// Resource article built from a src/content/posts/*.md entry: banner, featured image, title,
+// date, the Markdown body, and a sidebar listing the newest other posts.
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Base from './Base.astro';
+import PageBanner from '../components/PageBanner.astro';
+import { formatDate } from '../lib/format';
+import { thumbnail } from '../lib/thumbnail.mjs';
+
+interface Props {
+  entry: CollectionEntry<'posts'>;
+}
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+
+const others = (await getCollection('posts'))
+  .filter((p) => p.id !== entry.id)
+  .sort((a, b) => +b.data.published - +a.data.published);
+const recent = others.slice(0, 5);
+const latest = others.slice(0, 3);
+---
+<Base
+  title={data.title}
+  description={data.description}
+  ogImage={data.ogImage ?? data.image}
+  type="article"
+  published={data.published}
+  modified={data.modified}
+  breadcrumb={[{ name: 'Resources' }, { name: data.heading }]}
+  bodyClass="single-post"
+>
+  <PageBanner title="Resources" current={data.heading} />
+  <section class="vs-blog-wrapper blog-details space-top space-extra-bottom">
+    <div class="container">
+      <div class="row gx-40">
+        <div class="col-xl-8 col-lg-7">
+          <article class="vs-blog blog-single">
+            {data.image && (
+              <div class="blog-img"><img alt={data.imageAlt} decoding="async" src={data.image} /></div>
+            )}
+            <div class="blog-content">
+              <h1 class="blog-title h2">{data.heading}</h1>
+              <div class="blog-meta">
+                <span><i aria-hidden="true" class="far fa-calendar-alt"></i><time datetime={data.published.toISOString().slice(0, 10)}>{formatDate(data.published)}</time></span>
+              </div>
+              <div class="blog-content-inner clearfix">
+                <Content />
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="col-xl-4 col-lg-5">
+          <aside class="sidebar-area sticky-sidebar">
+            <div class="widget widget_block">
+              <h2 class="widget_title">Recent Posts</h2>
+              <ul class="wp-block-latest-posts__list wp-block-latest-posts">
+                {recent.map((p) => <li><a class="wp-block-latest-posts__post-title" href={`/${p.id}/`}>{p.data.heading}</a></li>)}
+              </ul>
+            </div>
+            <div class="widget horseno_recent_posts_widget">
+              <h3 class="widget_title">Latest News</h3>
+              <div class="recent-post-wrap">
+                {latest.map((p) => (
+                  <div class="recent-post">
+                    {p.data.image && (
+                      <div class="media-img">
+                        <a href={`/${p.id}/`} tabindex="-1"><img alt="" decoding="async" height="100" loading="lazy" src={thumbnail(p.data.image)} width="100" /></a>
+                      </div>
+                    )}
+                    <div class="media-body">
+                      <div class="recent-post-meta"><i aria-hidden="true" class="fas fa-calendar-alt"></i>{formatDate(p.data.published)}</div>
+                      <h4 class="post-title"><a class="text-inherit" href={`/${p.id}/`}>{p.data.heading}</a></h4>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style is:global>
+  /* article subheadings: the theme's style for WordPress block headings (h2.wp-block-heading) */
+  .blog-content-inner h2 {
+    position: relative;
+    font-size: 30px;
+    line-height: 132%;
+    margin: -0.38em 0 30px;
+    text-transform: capitalize;
+    padding: 0 0 5px;
+  }
+</style>

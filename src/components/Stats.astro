@@ -1,0 +1,29 @@
+---
+// Green stats band; numbers count up when scrolled into view (public/assets/js/widgets.js).
+import { stats } from '../data/site';
+---
+<div class="counter-layout1 position-relative">
+  <div class="counter-style1">
+    <div class="container">
+      <div class="row counter-carousel g-4 z-index-common justify-content-lg-between justify-content-center align-items-center" data-slick-arrow="true" data-slick-autoplay="true" data-slick-dots="false" data-slide-to-show="4">
+        {stats.map(({ value, suffix, label }, i) => (
+          <div class="vs-counter-item wow animate__fadeInUp" data-wow-delay={`${0.25 + i * 0.2}s`}>
+            <div class="media-style">
+              <div class="media-inner">
+                <div class="media-counter">
+                  <div class="media-count">
+                    <p class="media-title counter-number h2" data-count={value}>00</p>
+                    <span class="count-icon">{suffix}</span>
+                  </div>
+                  <p class="media-text">{label}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+  <span class="shape-mockup wow animate__fadeInLeft d-xxl-block d-none" data-wow-delay="0.80s" style="left: 0px; top: 0px;"><img alt="" src="/assets/img/2025/07/common-shape-left.png" style="opacity: 0.4;" /></span>
+  <span class="shape-mockup wow animate__fadeInRight d-xxl-block d-none" data-wow-delay="0.80s" style="right: 0px; bottom: 0px;"><img alt="" src="/assets/img/2025/07/common-shape-right.png" style="opacity: 0.4;" /></span>
+</div>

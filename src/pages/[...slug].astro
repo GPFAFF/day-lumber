@@ -1,10 +1,13 @@
 ---
 import Page from '../layouts/Page.astro';
+import { getCollection } from 'astro:content';
 import { pages, type SitePage } from '../site';
 
-export function getStaticPaths() {
+// Pages not yet converted to components (landing pages and posts are served by [slug].astro).
+export async function getStaticPaths() {
+  const converted = new Set([...(await getCollection('landing')), ...(await getCollection('posts'))].map((e) => e.id));
   return pages
-    .filter((p) => p.slug !== '404')
+    .filter((p) => p.slug !== '404' && !converted.has(p.slug))
     .map((p) => ({ params: { slug: p.slug === 'index' ? undefined : p.slug }, props: { page: p } }));
 }
 

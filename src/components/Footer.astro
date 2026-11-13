@@ -1,0 +1,147 @@
+---
+// Site footer (about, quick links, services, photo gallery, contact bar, copyright) and the
+// back-to-top button.
+import { business, footerGallery, footerLinks, footerServices } from '../data/site';
+---
+<footer class="footer-layout1 z-index-common site-footer">
+  <div class="footer-columns">
+    <div class="footer-col footer-col--about">
+      <img alt="" class="footer-logo" height="500" loading="lazy" src="/assets/img/2025/07/DLC_Logo-removebg-preview.png" width="500" />
+      <p class="footer-text">{business.tagline}</p>
+    </div>
+    <div class="footer-col footer-col--links">
+      <div class="widget widget_nav_menu footer-widget">
+        <h3 class="widget_title">Quick Link</h3>
+        <ul class="menu">
+          {footerLinks.map(({ label, href }) => (
+            <li><a href={href}><i aria-hidden="true" class="far fa-angle-right"></i> {label}</a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+    <div class="footer-col footer-col--services">
+      <div class="widget widget_nav_menu footer-widget">
+        <h3 class="widget_title">Services</h3>
+        <ul class="menu">
+          {footerServices.map((s) => <li><p><i aria-hidden="true" class="far fa-angle-right"></i> {s}</p></li>)}
+        </ul>
+      </div>
+    </div>
+    <div class="footer-col footer-col--gallery">
+      <div class="widget footer-widget">
+        <h3 class="widget_title">Gallery</h3>
+        <div class="sidebar-gallery">
+          {footerGallery.map(({ src, alt }) => (
+            <a class="popup-image" href={src}>
+              <img alt={alt} loading="lazy" src={src} />
+              <span class="gal-btn"><i aria-hidden="true" class="fal fa-plus"></i></span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-contact">
+    <div class="contact-box">
+      <div class="row g-4 justify-content-lg-around justify-content-center">
+        <div class="col-lg-4 border-right">
+          <div class="contact-body">
+            <span class="icon"><img alt="" src="/assets/img/2025/07/location-icon.svg" /></span>
+            <div class="contact-inner">
+              <h6 class="title"><a href="https://www.google.com/maps?cid=9970803211559301748">{business.street}<br />{business.city}, {business.region} {business.postalCode}</a></h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 border-right">
+          <div class="contact-body">
+            <span class="icon"><img alt="" src="/assets/img/2025/07/email-icon.svg" /></span>
+            <div class="contact-inner">
+              <p class="sub-title">Email Address</p>
+              <h6 class="title"><a href={`mailto:${business.email}`}>{business.email}</a></h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 border-right">
+          <div class="contact-body">
+            <span class="icon"><img alt="" src="/assets/img/2025/07/call-icon.svg" /></span>
+            <div class="contact-inner">
+              <p class="sub-title">Call Us For Support</p>
+              <h6 class="title"><a href={business.phoneHref}>+{business.phone}</a></h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="copyright-wrap">
+    <p class="copyright-text">© Copyright {new Date().getFullYear()} <a href="/">Daylumber</a>. All Rights Reserved</p>
+  </div>
+</footer>
+<button aria-label="Back to Top" class="back-to-top" id="backToTop">
+  <span class="progress-circle">
+    <svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="40"></circle><circle class="progress" cx="50" cy="50" r="40"></circle></svg>
+    <span class="progress-percentage" id="progressPercentage">0%</span>
+  </span>
+</button>
+
+<style>
+  .site-footer {
+    background-color: #000;
+    padding-top: 120px;
+  }
+  .footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1280px; /* 1250px of content + 15px padding each side */
+    margin: 0 auto;
+    padding: 0 15px 80px;
+  }
+  .footer-col {
+    width: 100%;
+  }
+  .footer-col--about {
+    padding-right: 50px;
+  }
+  .footer-col--links {
+    padding-left: 40px;
+  }
+  .footer-logo {
+    width: 35%;
+    height: auto;
+    margin-bottom: 25px;
+  }
+  .footer-col--services p {
+    color: var(--body-color);
+  }
+  .footer-contact {
+    background-color: #166b01;
+    padding: 0 15px;
+  }
+  .footer-contact .contact-box {
+    max-width: 1250px;
+    margin: 0 auto;
+    background: transparent !important;
+  }
+  .copyright-text {
+    text-align: center;
+  }
+  @media (min-width: 768px) {
+    .footer-col--about { width: 35%; }
+    .footer-col--links,
+    .footer-col--services { width: 20%; }
+    .footer-col--gallery { width: 25%; }
+  }
+  @media (max-width: 1024px) {
+    .site-footer { padding-top: 80px; }
+    .footer-columns { row-gap: 30px; padding: 0; }
+    .footer-col,
+    .footer-col--about,
+    .footer-col--links { padding: 0 15px; }
+    .footer-contact { display: none; }
+  }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .footer-col { width: 50% !important; }
+  }
+</style>

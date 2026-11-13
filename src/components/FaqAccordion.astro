@@ -1,0 +1,34 @@
+---
+// Bootstrap accordion of questions; the first answer starts open. Answers are HTML.
+interface Props {
+  id: string;
+  items: { question: string; answer: string }[];
+}
+const { id, items } = Astro.props;
+---
+<div class="accordion accordion-style1" id={id}>
+  {items.map(({ question, answer }, i) => (
+    <div class="accordion-item">
+      <h3 class="accordion-header" id={`${id}-h${i}`}>
+        <button
+          aria-controls={`${id}-c${i}`}
+          aria-expanded={i === 0 ? 'true' : 'false'}
+          class:list={['accordion-button', { collapsed: i !== 0 }]}
+          data-bs-target={`#${id}-c${i}`}
+          data-bs-toggle="collapse"
+          type="button">{question}</button>
+      </h3>
+      <div aria-labelledby={`${id}-h${i}`} class:list={['accordion-collapse collapse', { show: i === 0 }]} data-bs-parent={`#${id}`} id={`${id}-c${i}`}>
+        <div class="accordion-body" set:html={answer} />
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  /* question headings take the button's text style, not the theme's h3 size */
+  .accordion-header {
+    margin: 0;
+    font: inherit;
+  }
+</style>
