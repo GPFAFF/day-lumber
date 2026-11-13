@@ -58,7 +58,9 @@ content:'';
 .gallery-img img{
 	object-fit:cover;
 }
-.gallery-inner,
+.gallery-inner {
+	margin-bottom:20px;
+}
 
 .search-btn .vs-btn,.cta-layout1,.menu-top::before{
 	background-color: #166b01 !important;
