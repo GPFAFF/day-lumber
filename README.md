@@ -1,21 +1,48 @@
-# Day Lumber — clean static Astro deployment
+# Day Lumber — static Astro site
 
-This is a cleaned static HTML export inside an Astro 5 project. The pages are **not yet native Astro components**.
+Static site for https://daylumber.com, migrated from WordPress (Horseno theme + Elementor).
+Pages are static HTML in `public/`, served through Astro 5. They are **not yet native Astro
+components** (see issue #47).
 
-## Build and deploy
+## Develop and build
+
+Requires Node 22 (as set in `netlify.toml`).
 
 ```sh
 npm install
-npm run build
+npm run dev       # http://localhost:4321
+npm run build     # writes dist/
+npm run preview   # serves dist/
 ```
 
-Upload `dist/` to Netlify Drop, or connect the repository using `npm run build` and publish directory `dist`.
+## Layout
 
-## Cleanup
+| Path | Contents |
+|---|---|
+| `public/<slug>/index.html` | one page per URL (`trailingSlash: 'always'`) |
+| `public/assets/img/` | images (formerly `wp-content/uploads/`) |
+| `public/assets/theme/`, `theme-child/` | Horseno theme CSS/JS/fonts |
+| `public/assets/vendor/` | Elementor, horseno-core, safe-svg, WordPress core (jQuery etc.) |
+| `public/_redirects` | 301s for removed WordPress URLs, old Hugo URLs and old sitemap URLs |
+| `src/pages/sitemap.xml.ts` | builds `/sitemap.xml` from every page in `public/` (skips `noindex` pages) |
+| `astro.config.mjs` | writes `dist/_headers` with `X-Robots-Tag: noindex` on every build except the production build of daylumber.com |
 
-- Kept company pages and article URLs explicitly about pallets, skids, wood, shipping, manufacturing and lumber.
-- Removed unrelated WordPress theme demos, archives, placeholder shopping pages and author/category pagination.
-- Removed search forms and comment submission UI, plus visible comment sections.
-- Replaced visible horse terminology with pallet terminology; left theme code/asset identifiers alone so CSS and JavaScript dependencies are not broken.
-- Existing quote/contact forms are **still WordPress Contact Form 7 markup** and will **not submit on static Netlify**. Rebuild and test these using Netlify Forms before production.
-- Audit menus, images, page content and internal links before switching DNS. Review automatically replaced text for context.
+Elementor lazy-loads files by computed name from `assets/vendor/elementor/assets/js/chunks/`,
+`css/conditionals/` and `lib/`. Keep those folders whole.
+
+## Forms
+
+Netlify Forms. The names match the forms already on the `daylumber` Netlify site:
+
+| Form | Page(s) | Fields |
+|---|---|---|
+| `quote` | `/quote/`, home, location pages | name (Customer), contact, email, phone, message |
+| `contact` | `/contact-us/` | name, number (Phone), email, message |
+
+Both forms post to `/thanks/` and use a `bot-field` honeypot. Notification emails are set in
+Netlify → Forms → Notifications.
+
+## Deploy
+
+The Netlify site `daylumber` builds from this repository (`npm run build`, publish `dist/`).
+Pull requests get deploy previews, which are `noindex`.
