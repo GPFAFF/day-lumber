@@ -1,0 +1,72 @@
+---
+// Heading + bullet list beside a photo (Products and Services pages).
+interface Props {
+  heading: string;
+  items: string[];
+  image: { src: string; alt: string };
+  /** Fixed image height in px (cropped to fill); natural height when omitted. */
+  imageHeight?: number;
+  /** true when this is the first thing under the banner (loads the photo eagerly). */
+  eager?: boolean;
+}
+const { heading, items, image, imageHeight, eager = false } = Astro.props;
+---
+<section class="feature-split">
+  <div class="feature-split__inner">
+    <div class="feature-split__text">
+      <h2 class="feature-split__heading">{heading}</h2>
+      <ul class="feature-list">{items.map((item) => <li>{item}</li>)}</ul>
+    </div>
+    <div class="feature-split__media">
+      <img
+        alt={image.alt}
+        src={image.src}
+        loading={eager ? undefined : 'lazy'}
+        fetchpriority={eager ? 'high' : undefined}
+        style={imageHeight ? `height:${imageHeight}px;object-fit:cover` : undefined}
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .feature-split {
+    margin: 70px 0;
+    padding: 0 20px;
+  }
+  .feature-split__inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+  }
+  .feature-split__text,
+  .feature-split__media {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .feature-split__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .feature-split__heading {
+    font-size: 22px;
+    margin: 0 0 20px;
+    line-height: 1;
+  }
+  .feature-split__media img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+  }
+  @media (max-width: 1024px) {
+    .feature-split__inner {
+      flex-wrap: wrap;
+    }
+    .feature-split__text,
+    .feature-split__media {
+      flex-basis: 100%;
+    }
+  }
+</style>

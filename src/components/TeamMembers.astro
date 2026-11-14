@@ -1,0 +1,58 @@
+---
+// "Meet the Team" cards. carousel: the homepage version (slick carousel, cards centered).
+import { team } from '../data/site';
+
+interface Props {
+  carousel?: boolean;
+}
+const { carousel = false } = Astro.props;
+---
+<section class:list={['team-layout1 arrow-wrap space', { 'team-members--carousel': carousel, 'team-members--grid': !carousel }]}>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-6">
+        <div class="title-area mt-n1 text-center">
+          <span class="sec-subtitle text-theme">
+            <img alt="" src="/assets/img/2025/07/left-title-shape.svg" /> Team Members <img alt="" src="/assets/img/2025/07/right-title-shape.svg" />
+          </span>
+          <h2 class="sec-title text-title">Meet the <span class="title-higlight text-secondary inline">Team</span></h2>
+        </div>
+      </div>
+    </div>
+    <div
+      class:list={carousel ? 'row team-carousel justify-content-center arrow-wrap' : 'row gy-4'}
+      data-slick-arrow="true"
+      data-slick-autoplay="false"
+      data-slick-dots="false"
+      data-slide-to-show={carousel ? 4 : 3}
+    >
+      {team.map(({ name, role, photo, email, phone }) => (
+        <div class="col-xl-3">
+          <div class="team-style1">
+            <div class="team-img">
+              <img alt={`${name}, ${role}`} class="team-block__member--img" loading="lazy" src={photo} />
+            </div>
+            <div class="team-content">
+              <h3 class="team-title">{name}</h3>
+              <span class="team-desi">{role}</span>
+              <p>
+                Email: <a href={`mailto:${email}`}>{email}</a><br />
+                Phone: <a href={`tel:${phone}`}>{phone}</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .team-members--grid .row.gy-4 {
+    justify-content: center;
+  }
+  .team-members--carousel .slick-slider .slick-track {
+    display: flex;
+    justify-content: center;
+  }
+</style>

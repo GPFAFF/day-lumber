@@ -1,0 +1,28 @@
+---
+// Carousel of service cards on a light background (landing pages and the homepage). Anything
+// passed as children is shown above the carousel on the same background (the homepage intro).
+import { serviceCards } from '../data/site';
+---
+<div class="about-layout1 space service-cards">
+  <slot />
+  <div class="service-layout1 arrow-wrap wow animate__fadeInUp" data-wow-delay="0.35s">
+    <div class="container">
+      <div class="row service-carousel arrow-wrap" data-slick-arrow="true" data-slick-dots="false" data-slide-to-show="4">
+        {serviceCards.map(({ title, text }) => (
+          <div class="col-xl-3">
+            <div class="service-style1">
+              <h3 class="service-title h5">{title}</h3>
+              <p class="service-text">{text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .service-cards {
+    background: url('/assets/img/2025/07/about-bg-shape.png') center / cover no-repeat;
+  }
+</style>

@@ -1,0 +1,50 @@
+---
+// Bootstrap collapse list of questions; the first answer starts open and each question opens and
+// closes on its own (no data-bs-parent, so opening one doesn't close the others). Answers are HTML.
+interface Props {
+  id: string;
+  items: { question: string; answer: string }[];
+}
+const { id, items } = Astro.props;
+---
+<div class="accordion accordion-style1" id={id}>
+  {items.map(({ question, answer }, i) => (
+    <div class="accordion-item">
+      <h3 class="accordion-header" id={`${id}-h${i}`}>
+        <button
+          aria-controls={`${id}-c${i}`}
+          aria-expanded={i === 0 ? 'true' : 'false'}
+          class:list={['accordion-button', { collapsed: i !== 0 }]}
+          data-bs-target={`#${id}-c${i}`}
+          data-bs-toggle="collapse"
+          type="button">{question}</button>
+      </h3>
+      <div aria-labelledby={`${id}-h${i}`} class:list={['accordion-collapse collapse', { show: i === 0 }]} id={`${id}-c${i}`}>
+        <div class="accordion-body" set:html={answer} />
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  /* question headings take the button's text style, not the theme's h3 size */
+  .accordion-header {
+    margin: 0;
+    font: inherit;
+  }
+  /* open question: square bottom corners so the bar reads as the header of its answer panel */
+  .accordion-header:has(.accordion-button:not(.collapsed)) {
+    border-radius: 30px 30px 0 0;
+  }
+  /* smaller +/- button than the theme's 50px circle, with the same 12px gap on the right as
+     above and below it */
+  .accordion-button {
+    padding-right: 12px;
+  }
+  .accordion-button::after {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+</style>

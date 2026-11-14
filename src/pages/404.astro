@@ -1,7 +1,39 @@
 ---
-import Page from '../layouts/Page.astro';
-import { pages } from '../site';
-
-const page = pages.find((p) => p.slug === '404')!;
+import Base from '../layouts/Base.astro';
 ---
-<Page page={page} />
+<Base title="Page not found - Day Lumber" noindex footer={false} bodyClass="error404">
+  <section class="error-404 space-top space-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mx-auto">
+          <div class="text-center wow animate__fadeInUp" data-wow-delay="0.55s">
+            <div class="title-area">
+              <span class="sec-subtitle text-theme">
+                <svg aria-hidden="true" fill="none" height="9" viewBox="0 0 20 9" width="20"><path d="M0 3C0 1.34315 1.34315 0 3 0H20V3H0Z" fill="#588157"></path><path d="M6 9C6 7.34315 7.34315 6 9 6H20V9H6Z" fill="#588157"></path></svg>
+                Error Page
+                <svg aria-hidden="true" fill="none" height="9" viewBox="0 0 20 9" width="20"><path d="M20 3C20 1.34315 18.6569 0 17 0H0V3H20Z" fill="#588157"></path><path d="M14 9C14 7.34315 12.6569 6 11 6H0V9H14Z" fill="#588157"></path></svg>
+              </span>
+              <h1 class="sec-title text-title">Oops! That Page Can't Be <span>Found</span>.</h1>
+            </div>
+            <p class="error-text wow animate__fadeInUp" data-wow-delay="0.75s">
+              Sorry, this page doesn’t exist or has moved. Head back to the homepage, or <a href="/contact-us/">contact us</a> and we’ll help you find what you need.
+            </p>
+            <a class="vs-btn wow animate__bounceInUp" data-wow-delay="0.85s" href="/">Return To Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .error-404 {
+    padding-top: 300px;
+  }
+  @media (max-width: 1199px) {
+    .error-404 { padding-top: 220px; }
+  }
+  @media (max-width: 767px) {
+    .error-404 { padding-top: 170px; }
+  }
+</style>

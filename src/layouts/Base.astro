@@ -1,0 +1,89 @@
+---
+// Every page: <head> (SEO tags, theme CSS, analytics), the header, the page content, the footer
+// and the theme scripts. Page-specific markup goes in the default slot; extra <head> tags go in
+// the "head" slot.
+import Seo, { type SeoProps } from '../components/Seo.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { business } from '../data/site';
+
+interface Props extends SeoProps {
+  /** Classes for <body>; the theme styles some pages by body class. */
+  bodyClass?: string;
+  /** false hides the footer (the 404 page). */
+  footer?: boolean;
+}
+const { bodyClass, footer = true, ...seo } = Astro.props;
+
+const themeCss = [
+  '/assets/theme/assets/css/fontawesome.subset.css',
+  '/assets/theme/assets/css/bootstrap.min.css',
+  '/assets/theme/assets/css/nice-select.min.css',
+  '/assets/theme/assets/css/slick.min.css',
+  '/assets/theme/assets/css/magnific-popup.min.css',
+  '/assets/theme/assets/css/style.css',
+  '/assets/css/site.css',
+];
+const themeJs = [
+  '/assets/theme/assets/js/bootstrap.min.js',
+  '/assets/theme/assets/js/jquery.nice-select.min.js',
+  '/assets/theme/assets/js/slick.min.js',
+  '/assets/theme/assets/js/jquery.magnific-popup.min.js',
+  '/assets/vendor/core/js/imagesloaded.min.js',
+  '/assets/theme/assets/js/gsap.min.js',
+  '/assets/theme/assets/js/gsap-scroll-to-plugin.js',
+  '/assets/theme/assets/js/wow.min.js',
+  '/assets/theme/assets/js/main.js',
+  '/assets/js/widgets.js',
+];
+const fonts =
+  'https://fonts.googleapis.com/css?family=Poppins%3A200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7CUnbounded%3A200%2C300%2C400%2C500%2C600%2C700%2C800%2C900&subset=latin%2Clatin-ext&display=swap';
+---
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<Seo {...seo} />
+<link rel="icon" href={business.favicon} sizes="32x32" />
+<link rel="icon" href={business.favicon} sizes="192x192" />
+<link rel="apple-touch-icon" href={business.favicon} />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href={fonts} />
+{themeCss.map((href) => <link rel="stylesheet" href={href} />)}
+<script is:inline src="/assets/vendor/core/js/jquery/jquery.min.js"></script>
+<script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${business.gaId}`}></script>
+<script is:inline define:vars={{ gaId: business.gaId }}>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', gaId);
+</script>
+<slot name="head" />
+</head>
+<body class={bodyClass}>
+<Header />
+<slot />
+{footer && <Footer />}
+{themeJs.map((src) => <script is:inline src={src}></script>)}
+</body>
+</html>
+
+<style is:global>
+  /* Theme color scheme (was the theme's inline "color schemes" CSS, set in the WordPress options) */
+  :root {
+    --theme-color: #344e41;
+    --vs-secondary-color: #588157;
+    --title-color: #1e1e1e;
+    --text-color: #565656;
+    --body-color: #f3ecdc;
+    --light-color: #f1f1f1;
+    --smoke-color: #f3ecdc;
+    --black-color: #000000;
+    --white-color: #ffffff;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --border-color: #e6edfd;
+  }
+</style>

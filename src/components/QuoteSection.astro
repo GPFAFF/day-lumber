@@ -1,0 +1,97 @@
+---
+// Green band with the "quote" Netlify form and the general FAQs (landing pages, homepage, /quote/).
+// The form name "quote" matches the existing Netlify form; don't rename it or its fields.
+import FaqAccordion from './FaqAccordion.astro';
+import { generalFaqs } from '../data/site';
+
+interface Props {
+  /**
+   * 'band': 80px gap below, for the form that hangs below the band (landing pages).
+   * 'flush': no gap below (homepage, followed by the gallery).
+   * 'page': the /quote/ page, where the section is the main content (beige gap around the band, less padding, form not offset).
+   */
+  variant?: 'band' | 'flush' | 'page';
+}
+const { variant = 'band' } = Astro.props;
+
+const fields = [
+  { name: 'name', label: 'Customer', type: 'text' },
+  { name: 'contact', label: 'Contact Name', type: 'text' },
+  { name: 'email', label: 'Email Address', type: 'email' },
+  { name: 'phone', label: 'Phone Number', type: 'tel' },
+] as const;
+---
+<div class:list={['quote-band', `quote-band--${variant}`]}>
+  <section class="faq-layout1 bg-theme position-relative">
+    <div class="container">
+      <div class="row gx-60">
+        <div class="col-xl-6 wow animate__fadeInLeft" data-wow-delay="0.25s">
+          <div class="form-style1">
+            <div class="title-area text-center">
+              <h2 class="sec-title text-body">Request A Quote</h2>
+            </div>
+            <form action="/thanks/" aria-label="Request a quote" data-netlify="true" data-netlify-recaptcha="true" method="POST" name="quote" netlify-honeypot="bot-field">
+              <input name="form-name" type="hidden" value="quote" />
+              <p hidden><label>Leave this field empty: <input autocomplete="off" name="bot-field" tabindex="-1" /></label></p>
+              <div class="row gx-20">
+                {fields.map(({ name, label, type }) => (
+                  <div class="col-md-12 form-group">
+                    <input aria-label={label} class="form-control" maxlength="400" name={name} placeholder={label} required type={type} />
+                  </div>
+                ))}
+                <div class="col-md-12 form-group">
+                  <textarea aria-label="Message" class="form-control" maxlength="2000" name="message" placeholder="Message" required rows="4"></textarea>
+                </div>
+                <div class="col-md-12 form-group"><div class="captcha-box"><div data-netlify-recaptcha="true"></div></div></div>
+                <div class="col-md-12 form-group">
+                  <button class="vs-btn w-100 justify-content-center" type="submit">Submit Now</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-xl-6 space wow animate__fadeInRight" data-wow-delay="0.25s">
+          <div class="title-area mb-60">
+            <span class="sec-subtitle text-body">
+              <img alt="" src="/assets/img/2025/07/left-title-shape2.svg" /> FAQs <img alt="" src="/assets/img/2025/07/right-title-shape2.svg" />
+            </span>
+            <h2 class="sec-title text-body">Frequently Asked Questions</h2>
+          </div>
+          <FaqAccordion id="faq-general" items={generalFaqs.map((f) => ({ ...f, answer: `<p>${f.answer}</p>` }))} />
+        </div>
+      </div>
+    </div>
+    <span class="shape-mockup moving d-xxl-block d-none" style="left: 7%; bottom: 10%;"><img alt="" src="/assets/img/2025/07/dot-shape.png" /></span>
+    <span class="shape-mockup moving d-xxl-block d-none" style="right: 7%; top: 10%;"><img alt="" src="/assets/img/2025/07/dot-shape.png" /></span>
+    <span class="shape-mockup wow animate__fadeInLeft d-xxl-block d-none" data-wow-delay="0.80s" style="left: 0px; top: 0px;"><img alt="" src="/assets/img/2025/07/cta-shape1.png" style="opacity: 0.2;" /></span>
+    <span class="shape-mockup wow animate__fadeInRight d-xxl-block d-none" data-wow-delay="0.80s" style="right: 0px; bottom: 0px;"><img alt="" src="/assets/img/2025/07/cta-shape2.png" style="opacity: 0.2;" /></span>
+  </section>
+</div>
+
+<style>
+  /* keep the decorative shapes (20% opacity lines, dots) behind the form and FAQs instead of over them */
+  .faq-layout1 > .container {
+    position: relative;
+    z-index: 1;
+  }
+  .quote-band--band {
+    padding-bottom: 80px;
+  }
+  /* beige gap above and below the band, like the content sections on the other inner pages */
+  .quote-band--page {
+    padding: var(--section-space) 0;
+  }
+  @media (max-width: 991px) {
+    .quote-band--page {
+      padding: var(--section-space-mobile) 0;
+    }
+  }
+  .quote-band--page .faq-layout1 {
+    margin-bottom: 0 !important;
+    padding: 50px 0;
+  }
+  /* the theme drops the form below the band so it overlaps the next section; nothing follows it here */
+  .quote-band--page .form-style1 {
+    transform: translateY(0);
+  }
+</style>

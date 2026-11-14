@@ -5,13 +5,6 @@
 .hero-layout1{
 	position:relative;
 }
-.page-id-2737 .breadcumb-wrapper{
-	    background-image: url(/assets/img/2026/04/IMG_1112-scaled.webp) !important;
-}
-
-.page-id-2737 .breadcumb-wrapper::before{
-	display:none;
-}
 
 .blog-img.w-img{
 	height:325px;
@@ -43,28 +36,12 @@
 .team-style1 .team-content p,.team-style1 .team-content p a{
 	color:#fff;
 }
-.elementor-element-baa5456 {
-	display:none;
-}
-.elementor-element-160a940 .form-style1 {
-    transform: translateY(0px);
-}
-.elementor-element-cfab41d p{
-	color:#F3ECDC !important;
-}
-.page-id-2969 .faq-layout1 {
-    margin-bottom: 0 !important;
-    padding: 50px 0;
-}
-.page-id-2969 .faq-layout1 {
-    margin-bottom: 0 !important;
-}
+
 .sidemenu-content .vs-widget-about img{
 	    width: 100px;
     height: 100px;
     object-fit: contain;
 }
-
 
 .hero-layout1::after{
 	position:absolute;
@@ -81,12 +58,10 @@ content:'';
 .gallery-img img{
 	object-fit:cover;
 }
-.gallery-inner,.elementor-element-7a88988 .col-lg-6 {
+.gallery-inner {
 	margin-bottom:20px;
 }
-.elementor-element-51c5a6f .contact-box {
-	background:transparent !important;
-}
+
 .search-btn .vs-btn,.cta-layout1,.menu-top::before{
 	background-color: #166b01 !important;
 }
@@ -116,9 +91,6 @@ form.header-search{
     width: 120px;
     object-fit: contain;
 }
-.elementor-element-1628be1 .row.gy-4{
-	    justify-content: center;
-}
 .team-style1 .team-img{
 	height:300px !important;
 	margin-bottom:20px;
@@ -133,10 +105,6 @@ margin-bottom:20px;
 }
 .hero-layout2 .hero-item::after{
 	display:none !important;
-}
-.elementor-element-3ab7be5 .slick-slider .slick-track{
-	    justify-content: center;
-    display: flex;
 }
 .hero-layout2 .hero-item {
     padding: 70px 0 70px !important;
@@ -166,10 +134,6 @@ ul#menu-main-menu-1 a{
 a#dropdownMenuLink {
     display: none !important
 }
-.elementor-element-2c01d8f .hero-text {
-    font-size: 20px;
-}
-
 
 @media (max-width: 1399px) {
     .header-layout1 .header-bottom {
@@ -188,84 +152,6 @@ a#dropdownMenuLink {
 }
 .service-style1 {
     margin-top: 0px !important;
-}
-.page-id-3221 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3228 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3242 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3262 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3273 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3293 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3316 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3347 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3377 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3478 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3409 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3438 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3504 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3533 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3556 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3574 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3609 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3639 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3669 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3695 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3719 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3739 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3768 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3797 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3827 .breadcumb-wrapper {
-    display: none;
-}
-.page-id-3845 .breadcumb-wrapper {
-    display: none;
 }
 
 /* ---- Overrides added after the migration ---- */
@@ -375,4 +261,26 @@ p a:not([class]),
 .faq-layout1 .form-style1 textarea.form-control::placeholder {
   color: var(--white-color);
   opacity: 1;
+}
+
+/* reCAPTCHA checkbox: Netlify replaces the inner div with Google's widget (an iframe that can't be
+   restyled). The panel around it matches each form's fields and centers it. Its height is
+   reserved (78px widget + padding) so the form doesn't jump when the widget loads. */
+.captcha-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 98px;
+  padding: 10px;
+}
+/* quote form: dark green panel like the message box */
+.faq-layout1 .captcha-box {
+  background-color: var(--theme-color);
+  border-radius: 24px;
+}
+/* contact form: cream panel with the inputs' thin green border */
+.contact-layout2 .captcha-box {
+  background-color: var(--body-color);
+  border: 1px solid var(--theme-color);
+  border-radius: 6px;
 }

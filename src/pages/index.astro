@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Stats from '../components/Stats.astro';
+import AboutIntro from '../components/AboutIntro.astro';
+import ServiceCards from '../components/ServiceCards.astro';
+import TeamMembers from '../components/TeamMembers.astro';
+import QuoteSection from '../components/QuoteSection.astro';
+import Gallery from '../components/Gallery.astro';
+import BlogCarousel from '../components/BlogCarousel.astro';
+import { localBusinessSchema, photos } from '../data/site';
+---
+<Base
+  title="Custom Pallets & Pallet Manufacturer Springfield MA - Day Lumber"
+  description="Looking for custom pallets & a pallet manufacturer in Springfield MA? Daylumber delivers high-quality, durable pallet solutions tailored to your needs. Contact us today for a fast quote and reliable service!"
+  published={new Date('2025-07-17')}
+  modified={new Date('2026-05-13')}
+  schema={[localBusinessSchema]}
+  bodyClass="home"
+>
+  <Hero heading="Our Pallets -" highlight="Your Products" tagline="Everything Matters" taglineSize="large" />
+  <Stats />
+  <ServiceCards>
+    <AboutIntro
+      heading="Why Day"
+      highlight="Lumber?"
+      items={[
+        'Specialize in Domestic and International Wood Packaging',
+        'Over 95 years of experience serving the entire Northeast, with a focus on the Greater Springfield, MA area, Greater Hartford CT, area, and Western Massachusetts',
+        'Custom Wood Pallets, Crates, Skids, and Boxes',
+        'Heat Treatment Kiln on Site',
+        'Export Certified',
+        'Cushioned / shock pallets',
+        'Dedicated Staff with 300+ years of combined industry experience',
+        'Unparalleled customer service and product quality',
+      ]}
+      cta={{ label: 'About Us', href: '/about-us/' }}
+      photos={[photos.technology, photos.truck, photos.history]}
+    />
+  </ServiceCards>
+  <TeamMembers carousel />
+  <QuoteSection variant="flush" />
+  <Gallery spaced />
+  <BlogCarousel />
+</Base>

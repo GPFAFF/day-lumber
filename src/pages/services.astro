@@ -1,0 +1,62 @@
+---
+import Base from '../layouts/Base.astro';
+import PageBanner from '../components/PageBanner.astro';
+import FeatureSplit from '../components/FeatureSplit.astro';
+import FeatureCards from '../components/FeatureCards.astro';
+---
+<Base
+  title="Services - Day Lumber"
+  description="Automated pallet production, an on-site heat treatment kiln, export certification, NELMA certification, stocking programs and on-time delivery from Day Lumber."
+  published={new Date('2025-07-17')}
+  modified={new Date('2026-03-09')}
+  breadcrumb={[{ name: 'Services' }]}
+>
+  <PageBanner title="Services" />
+  <FeatureSplit
+    heading="Check out our services"
+    items={[
+      'Automated Pallet Maker',
+      'Hand-Side Production for specialty pallets',
+      'Inventory Management services',
+      'Stocking Programs',
+      'On time delivery',
+      'Heat-treatment certification',
+      'Custom packaging design',
+      'Extensive custom operation',
+      'International Export',
+    ]}
+    image={{ src: '/assets/img/2026/03/family.jpg', alt: 'Day Lumber team in front of stacked pallets' }}
+    eager
+  />
+  <FeatureCards
+    cards={[
+      {
+        heading: 'Pallet Heat Treatment Kiln',
+        items: [
+          'Heat Treatment Kiln was installed in May 2008',
+          'We are able to heat treat any size pallet, skid or wooden box for overseas shipment',
+          'We can provide the documentation to make sure your goods are shipped export certified',
+        ],
+        image: { src: '/assets/img/2026/03/day-lumber-kiln.jpg', alt: 'Day Lumber pallet heat treatment kiln' },
+      },
+      {
+        heading: 'Nelma Certified',
+        items: [
+          'The NorthEastern Lumber Manufactuers Association is the rules writing agency for Eastern White Pine Lumber and the grading authority for Eastern Spruce',
+          'In addition, NELMA is a leading agency for export wood packaging certification and the marketing voice for the regions’ wood products industry.',
+        ],
+        image: { src: '/assets/img/2026/03/nelma_l.png', alt: 'NELMA logo' },
+        fit: 'contain',
+      },
+    ]}
+  />
+  <FeatureSplit
+    heading="Automated Pallet Maker"
+    items={[
+      'Automated Pallet Machine',
+      'Day Lumber’s Brand New Viking Pallet Machine is the top of the line automatic pallet maker in the industry',
+      'Day Lumber can produce up to 2,500 pallets per day',
+    ]}
+    image={{ src: '/assets/img/2026/03/viking.jpg', alt: 'Viking Express automated pallet machine' }}
+  />
+</Base>

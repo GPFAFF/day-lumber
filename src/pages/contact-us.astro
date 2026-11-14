@@ -1,0 +1,86 @@
+---
+// Contact details, the "contact" Netlify form and a map. The form name "contact" and its field
+// names match the existing Netlify form; don't rename them.
+import Base from '../layouts/Base.astro';
+import PageBanner from '../components/PageBanner.astro';
+import { business, localBusinessSchema } from '../data/site';
+
+const details = [
+  { icon: '/assets/img/2025/08/working-hours-1.svg', title: 'Open', text: 'Mon-Fri: 6:00AM - 4:30PM' },
+  { icon: '/assets/img/2025/08/call-icon.svg', title: 'Call Us Any Time', text: business.phone, href: business.phoneHref },
+  { icon: '/assets/img/2025/07/email-icon.svg', title: 'Email Address', text: business.email, href: `mailto:${business.email}` },
+  { icon: '/assets/img/2025/07/location-icon.svg', title: 'Office Address', text: `${business.street} ${business.city}, ${business.region} ${business.postalCode}` },
+];
+---
+<Base
+  title="Contact Us - Day Lumber"
+  description="Contact Day Lumber at 70 Orange Street, Chicopee, MA 01013. Call 413-536-3511, Monday to Friday 6:00 AM to 4:30 PM, or send us a message online."
+  published={new Date('2025-07-17')}
+  modified={new Date('2026-04-03')}
+  breadcrumb={[{ name: 'Contact Us' }]}
+  schema={[localBusinessSchema]}
+>
+  <PageBanner title="Contact Us" />
+  <section class="contact-layout2 space">
+      <div class="container">
+        <div class="row g-5 gx-60 align-items-center">
+          <div class="col-lg-6">
+            <div class="map-layout1">
+              <div class="contact-media">
+                <h2 class="contact-title title-shep">Let’s Get In Touch!</h2>
+                {details.map(({ icon, title, text, href }) => (
+                  <div class="media-style1">
+                    <div class="media-icon"><img alt="" src={icon} /></div>
+                    <div class="media-body">
+                      <h3 class="media-title">{title}</h3>
+                      <p class="media-info">{href ? <a href={href}>{text}</a> : text}</p>
+                    </div>
+                  </div>
+                ))}
+                <span class="shape-mockup z-index1 wow animate__fadeInRight d-xxl-block d-none" data-wow-delay="0.80s" style="right: 0px; top: 0px;"><img alt="" src="/assets/img/2025/08/map-shape.png" style="opacity: 0.5;" /></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="title-area">
+              <span class="sec-subtitle text-theme">
+                <img alt="" src="/assets/img/2025/07/left-title-shape.svg" /> Contact Us <img alt="" src="/assets/img/2025/07/right-title-shape.svg" />
+              </span>
+              <h2 class="sec-title text-title">Drop us a line <span class="title-higlight text-secondary inline">below</span></h2>
+            </div>
+            <div class="form-style1 wow animate__fadeInUp" data-wow-delay="0.45s">
+              <form action="/thanks/" aria-label="Contact us" data-netlify="true" data-netlify-recaptcha="true" method="POST" name="contact" netlify-honeypot="bot-field">
+                <input name="form-name" type="hidden" value="contact" />
+                <p hidden><label>Leave this field empty: <input autocomplete="off" name="bot-field" tabindex="-1" /></label></p>
+                <div class="row gx-20">
+                  <div class="col-md-6 form-group">
+                    <input aria-label="Name" class="form-control" maxlength="400" name="name" placeholder="Name" required type="text" />
+                    <i aria-hidden="true" class="fas fa-user"></i>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <input aria-label="Phone" class="form-control" maxlength="400" name="number" placeholder="Phone" required type="tel" />
+                  </div>
+                  <div class="col-md-12 form-group">
+                    <input aria-label="Email Address" class="form-control" maxlength="400" name="email" placeholder="Email Address" required type="email" />
+                  </div>
+                  <div class="col-md-12 form-group">
+                    <textarea aria-label="Message" class="form-control" cols="40" maxlength="2000" name="message" placeholder="Message Here..." required rows="10"></textarea>
+                  </div>
+                  <div class="col-md-12 form-group"><div class="captcha-box"><div data-netlify-recaptcha="true"></div></div></div>
+                  <div class="col-md-12 form-group">
+                    <button class="vs-btn justify-content-center" type="submit">Send Message</button>
+                  </div>
+                </div>
+              </form>
+              <span class="shape-mockup z-index1 wow animate__fadeInRight d-xxl-block d-none" data-wow-delay="0.80s" style="right: 0px; bottom: 0px;"><img alt="" src="/assets/img/2025/08/contact-shape-2-1.png" /></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <div class="map-layout1">
+    <div class="ratio ratio-21x9 wow animate__fadeInUp" data-wow-delay="0.35s" style="height:742px">
+      <iframe allowfullscreen="" height="720" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src={business.mapEmbed} style="border:0;" title="Map: Day Lumber, 70 Orange Street, Chicopee, MA" width="800"></iframe>
+    </div>
+  </div>
+</Base>

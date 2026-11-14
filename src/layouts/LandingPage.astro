@@ -1,0 +1,161 @@
+---
+// Service/city landing page built from a src/content/landing/*.md entry.
+//
+// Markdown body: sections separated by a line containing only `---`.
+//   - A section that starts with an image is shown as image + text, alternating sides.
+//   - Any other section is centered text on an alternating beige/white band.
+// Fixed blocks around the sections: hero and stats band first, the photo gallery after the
+// 3rd section, the service cards after the 4th, then the page FAQs and the quote form.
+import type { CollectionEntry } from 'astro:content';
+import Base from './Base.astro';
+import Hero from '../components/Hero.astro';
+import Stats from '../components/Stats.astro';
+import Gallery from '../components/Gallery.astro';
+import ServiceCards from '../components/ServiceCards.astro';
+import FaqAccordion from '../components/FaqAccordion.astro';
+import QuoteSection from '../components/QuoteSection.astro';
+
+interface Props {
+  entry: CollectionEntry<'landing'>;
+}
+const { entry } = Astro.props;
+const { data } = entry;
+
+const GALLERY_AFTER = 3;
+const SERVICES_AFTER = 4;
+
+const leadImage = /^\s*<p>\s*(<img [^>]*>)\s*<\/p>/;
+let split = 0;
+let centered = 0;
+const sections = (entry.rendered?.html ?? '')
+  .split(/<hr\s*\/?>/)
+  .map((html) => html.trim())
+  .filter(Boolean)
+  .map((html) => {
+    const m = html.match(leadImage);
+    return m
+      ? { kind: 'split' as const, image: m[1], html: html.slice(m[0].length), reverse: split++ % 2 === 1 }
+      : { kind: 'centered' as const, html, tone: centered++ % 2 === 0 ? 'beige' : 'white' };
+  });
+
+const schema = data.faqs.length
+  ? [
+      {
+        '@type': 'FAQPage',
+        '@id': `${new URL(Astro.url.pathname, Astro.site).href}#faq`,
+        mainEntity: data.faqs.map((f) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer } })),
+      },
+    ]
+  : [];
+---
+<Base
+  title={data.title}
+  description={data.description}
+  ogImage={data.ogImage}
+  published={data.published}
+  modified={data.modified}
+  breadcrumb={[{ name: data.heading }]}
+  schema={schema}
+>
+  <Hero heading={data.heading} tagline={data.tagline} />
+  <Stats />
+  {sections.map((s, i) => (
+    <Fragment>
+      {s.kind === 'split' ? (
+        <section class:list={['landing-section landing-split', { 'landing-split--reverse': s.reverse }]}>
+          <div class="landing-inner">
+            <div class="landing-media" set:html={s.image} />
+            <div class="landing-text" set:html={s.html} />
+          </div>
+        </section>
+      ) : (
+        <section class={`landing-section landing-centered landing-centered--${s.tone}`}>
+          <div class="landing-inner landing-text" set:html={s.html} />
+        </section>
+      )}
+      {i + 1 === GALLERY_AFTER && <Gallery />}
+      {i + 1 === SERVICES_AFTER && <ServiceCards />}
+    </Fragment>
+  ))}
+  {data.faqs.length > 0 && (
+    <section class="landing-section landing-faq">
+      <div class="landing-inner">
+        <h2 class="text-center">Frequently Asked Questions</h2>
+        <div class="faq-layout2 position-relative">
+          <div class="container">
+            <div class="row justify-content-center wow animate__fadeInUp" data-wow-delay="0.25s">
+              <div class="col-xl-10">
+                <FaqAccordion id="faq-page" items={data.faqs} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )}
+  <QuoteSection />
+</Base>
+
+<style is:global>
+  .landing-section {
+    padding: 60px 20px;
+  }
+  .landing-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .landing-split {
+    background-color: var(--light-color);
+  }
+  .landing-split .landing-inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  .landing-split--reverse .landing-inner {
+    flex-direction: row-reverse;
+  }
+  .landing-media,
+  .landing-split .landing-text {
+    width: calc(50% - 15px);
+  }
+  .landing-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .landing-centered {
+    text-align: center;
+  }
+  .landing-centered--beige {
+    background-color: var(--body-color);
+  }
+  .landing-centered--white {
+    background-color: var(--white-color);
+  }
+  .landing-text > :is(h2, h3),
+  .landing-faq h2 {
+    margin: 0 0 20px;
+    line-height: 50px;
+  }
+  .landing-text > * + :is(h2, h3) {
+    margin-top: 20px;
+  }
+  .landing-faq h2 {
+    margin-bottom: 20px;
+  }
+  @media (max-width: 767px) {
+    .landing-media,
+    .landing-split .landing-text {
+      width: 100%;
+    }
+    /* stacked: sections that show the image on the right put it below the text */
+    .landing-split--reverse .landing-inner {
+      flex-direction: column-reverse;
+    }
+  }
+</style>

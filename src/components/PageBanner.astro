@@ -1,0 +1,33 @@
+---
+// Photo banner with the page title and a Home > page breadcrumb (inner pages and posts).
+interface Props {
+  /** Large banner text. */
+  title: string;
+  /** Last breadcrumb item; defaults to the title. */
+  current?: string;
+  /** 'h1' when the banner text is the page's main heading (inner pages); posts use their own <h1>. */
+  as?: 'h1' | 'div';
+  /** Banner photo; defaults to the site-wide pallets photo (public/assets/css/site.css). */
+  image?: string;
+}
+const { title, current = title, as: Tag = 'h1', image } = Astro.props;
+---
+<div class:list={['breadcumb-wrapper background-image', { 'breadcumb-wrapper--photo': image }]} style={image ? `background-image:url(${image}) !important` : undefined}>
+  <div class="container z-index-common">
+    <div class="breadcumb-content">
+      <Tag class:list={['breadcumb-title', { h1: Tag !== 'h1' }]}>{title}</Tag>
+      <nav class="breadcumb-menu-wrap" aria-label="Breadcrumb">
+        <div class="breadcumb-menu">
+          <span><a href="/">Home</a></span><span class="active" aria-current="page">{current}</span>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* a custom photo is shown without the theme's dark overlay */
+  .breadcumb-wrapper--photo::before {
+    display: none;
+  }
+</style>
