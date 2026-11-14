@@ -1,0 +1,48 @@
+---
+// Full-width photo hero with heading, tagline and a call-to-action button (landing pages).
+interface Props {
+  heading: string;
+  /** Second part of the heading, styled by the theme's .title-highlight. */
+  highlight?: string;
+  tagline?: string;
+  eyebrow?: string;
+  background?: string;
+  cta?: { label: string; href: string };
+  /** 'large' for a short slogan (homepage); 'small' for a full sentence (landing pages). */
+  taglineSize?: 'small' | 'large';
+}
+const {
+  heading,
+  highlight,
+  taglineSize = 'small',
+  tagline,
+  eyebrow = 'Day Lumber Company',
+  background = '/assets/img/2026/03/pallets.webp',
+  cta = { label: 'Contact Now', href: '/contact-us/' },
+} = Astro.props;
+---
+<section class="hero-layout1" data-bg-src={background}>
+  <div class="hero-item">
+    <div class="container position-relative z-index">
+      <div class="row">
+        <div class="col-lg-8 position-relative">
+          <div class="hero-content">
+            <div class="hero-subtitle wow animate__fadeInUp" data-wow-delay="0.30s">{eyebrow}</div>
+            <h1 class="hero-title wow animate__fadeInUp" data-wow-delay="0.50s">{heading}{highlight && <Fragment> <span class="title-highlight">{highlight}</span></Fragment>}</h1>
+            {tagline && <p class:list={['hero-text wow animate__fadeInUp', { 'hero-text--small': taglineSize === 'small' }]} data-wow-delay="0.75s">{tagline}</p>}
+            <a class="vs-btn wow animate__fadeInUp" data-wow-delay="0.95s" href={cta.href}>
+              {cta.label}<i aria-hidden="true" class="fa-regular fa-arrow-right"></i>
+            </a>
+            <span class="dot-shape wow animate__bounceInRight" data-wow-delay="0.70s"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-text--small {
+    font-size: 20px;
+  }
+</style>

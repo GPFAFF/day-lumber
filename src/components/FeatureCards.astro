@@ -1,0 +1,78 @@
+---
+// Row of white cards, each with a photo, heading and bullet list (Products and Services pages).
+interface Card {
+  heading: string;
+  items: string[];
+  image: { src: string; alt: string };
+  /** 'contain' for logos that must not be cropped. */
+  fit?: 'cover' | 'contain';
+}
+interface Props {
+  cards: Card[];
+}
+const { cards } = Astro.props;
+---
+<section class="feature-cards">
+  <div class="feature-cards__inner">
+    {cards.map(({ heading, items, image, fit = 'cover' }) => (
+      <div class="service-details feature-card">
+        <img alt={image.alt} class="feature-card__img" loading="lazy" src={image.src} style={`object-fit:${fit}`} />
+        <div class="details-title title-shep wow animate__fadeInUp feature-card__title"><h2 class="feature-card__heading">{heading}</h2></div>
+        <ul class="feature-list feature-card__list">{items.map((item) => <li>{item}</li>)}</ul>
+      </div>
+    ))}
+  </div>
+</section>
+
+<style>
+  .feature-cards {
+    padding: 0 10px;
+  }
+  .feature-cards__inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    gap: 20px;
+  }
+  .feature-card {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .feature-card__img {
+    display: block;
+    width: 100%;
+    height: 250px;
+    border-radius: 25px;
+    margin-bottom: 60px;
+  }
+  /* .details-title.title-shep (theme) draws the two green bars at the bottom of this box:
+     20px under the heading text, 30px above the list */
+  .feature-card__title {
+    margin: 0 0 30px;
+    padding-bottom: 30px;
+  }
+  .feature-card__heading {
+    margin: 0;
+    line-height: 1;
+  }
+  @media (max-width: 1024px) {
+    .feature-card__img {
+      margin-bottom: 30px;
+    }
+  }
+  @media (max-width: 767px) {
+    .feature-cards {
+      padding: 0;
+    }
+    .feature-cards__inner {
+      flex-direction: column;
+    }
+    .feature-card__img {
+      margin-bottom: 15px;
+    }
+    .feature-card__title {
+      margin-bottom: 20px;
+    }
+  }
+</style>

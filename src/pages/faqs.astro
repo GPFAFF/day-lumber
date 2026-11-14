@@ -1,0 +1,86 @@
+---
+// Frequently asked questions (/faqs/). Answers are HTML.
+import Base from '../layouts/Base.astro';
+import PageBanner from '../components/PageBanner.astro';
+import FaqAccordion from '../components/FaqAccordion.astro';
+
+const faqs = [
+  {
+    question: "What sizes of pallets and skids do you make?",
+    answer: "Any size. We build fully customized pallets and skids as well as industry standard sizes, including block pallets, stringer pallets, and tops and covers. Options include hardwood, band notch and four-way notch, stenciling, color coding, chamfer, and screw or ring nails.",
+  },
+  {
+    question: "Do you make heat treated pallets for export (ISPM 15)?",
+    answer: "Yes. We have had a heat treatment kiln on site since May 2008 and can heat treat any size pallet, skid or wooden box for overseas shipment. Our pallets are certified for IPPC for international exports, and we provide the documentation so your goods ship export certified.",
+  },
+  {
+    question: "What certifications do you have?",
+    answer: "Day Lumber is NELMA certified. The Northeastern Lumber Manufacturers Association is a leading agency for export wood packaging certification. We also build pallets, skids and crates certified for military specifications.",
+  },
+  {
+    question: "What do you build besides pallets and skids?",
+    answer: "Plywood crates and boxes made with agency stamped plywood and OSB, with foam or metal inserts, as well as shook boxes, cleated boxes and shipping crates with international export certification. We also build collapsible and agricultural bins, including bins built to spec for the cranberry industry, and foam cushioned pallets for special shipping needs.",
+  },
+  {
+    question: "Can you build to our own design?",
+    answer: "Yes. We can design packaging for you or work from your design to create any wooden or foam cushioned pallet or box. Custom packaging design is part of our services.",
+  },
+  {
+    question: "How many pallets can you produce?",
+    answer: "Our automated Viking pallet machine can produce up to 2,500 pallets per day. For specialty pallets we also offer hand-side production.",
+  },
+  {
+    question: "What areas do you serve?",
+    answer: "We are located at 70 Orange Street in Chicopee, MA, in the center of New England, and serve customers throughout Massachusetts, Connecticut, Rhode Island and everywhere in between. We run our own trucking fleet for on-time delivery.",
+  },
+  {
+    question: "Can you keep pallets in stock for us?",
+    answer: "Yes. We offer stocking programs and inventory management services, backed by more than 75,000 square feet of storage.",
+  },
+  {
+    question: "How do I request a quote?",
+    answer: "Fill out our <a href=\"/quote/\">quote form</a>, call <a href=\"tel:+14135363511\">413-536-3511</a>, or email <a href=\"mailto:sales@daylumber.com\">sales@daylumber.com</a>. Our office is open Monday to Friday, 6:00 AM to 4:30 PM.",
+  },
+];
+
+const schema = [
+  {
+    '@type': 'FAQPage',
+    '@id': 'https://daylumber.com/faqs/#faq',
+    mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer.replace(/<[^>]+>/g, '') } })),
+  },
+];
+---
+<Base
+  title="FAQs - Day Lumber"
+  description="Answers to common questions about Day Lumber custom wood pallets, skids, crates and heat treated ISPM 15 export pallets from our Chicopee, MA facility."
+  published={new Date('2025-07-17')}
+  modified={new Date('2026-03-03')}
+  breadcrumb={[{ name: 'FAQs' }]}
+  schema={schema}
+>
+  <PageBanner title="FAQs" />
+  <section class="faqs-page">
+    <div class="title-area mt-n1 text-center">
+      <span class="sec-subtitle text-theme">
+        <img alt="" src="/assets/img/2025/07/left-title-shape.svg" /> FAQs <img alt="" src="/assets/img/2025/07/right-title-shape.svg" />
+      </span>
+      <h2 class="sec-title text-title">Frequently Asked <span class="title-higlight text-secondary inline">Questions</span></h2>
+    </div>
+    <div class="faq-layout2 position-relative">
+      <div class="container">
+        <div class="row justify-content-center wow animate__fadeInUp" data-wow-delay="0.25s">
+          <div class="col-xl-10">
+            <FaqAccordion id="faq" items={faqs} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .faqs-page {
+    padding: 120px 0;
+  }
+</style>

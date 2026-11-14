@@ -1,6 +1,8 @@
-node_modules/
-dist/
-site/data/webpack.json
-/npm-debug.log
-yarn-error.log
-.env
+# build output and deps (anchored so public/**/dist/ asset folders are kept)
+/node_modules/
+/dist/
+/.astro/
+.DS_Store
+
+# Local Netlify folder
+/.netlify/

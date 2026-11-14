@@ -1,0 +1,286 @@
+/* Site-wide overrides, loaded after the theme stylesheets on every page. */
+
+/* ---- From WordPress "Additional CSS" (Appearance > Customize), moved out of the
+   inline <style id="wp-custom-css"> copy in every page. ---- */
+.hero-layout1{
+	position:relative;
+}
+
+.blog-img.w-img{
+	height:325px;
+}
+.blog-img.w-img a{
+	height:100%;
+	display:block;
+}
+.blog-img.w-img img{
+	height:100%;
+	object-fit:cover;
+}
+.vs-blog .blog-title{
+	font-size:16px !important;
+}
+.sidemenu-wrapper .sidemenu-text {
+    font-weight: 600;
+}
+.footer-text {
+    font-weight: 700;
+}
+.hero-text {
+   font-size: 32px;
+    font-weight: 600;
+}
+.team-style1 .team-content {
+    padding: 218px 15px 24px 15px;
+}
+.team-style1 .team-content p,.team-style1 .team-content p a{
+	color:#fff;
+}
+
+.sidemenu-content .vs-widget-about img{
+	    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.hero-layout1::after{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+height:100%;
+content:'';
+	background-color:#000000ab;
+}
+.gallery-box,.gallery-box .gallery-img,.gallery-img img{
+	height:100%;
+}
+.gallery-img img{
+	object-fit:cover;
+}
+.gallery-inner {
+	margin-bottom:20px;
+}
+
+.search-btn .vs-btn,.cta-layout1,.menu-top::before{
+	background-color: #166b01 !important;
+}
+.breadcumb-wrapper {
+    background-image: url(/assets/img/2026/03/pallets.webp) !important;
+}
+:root {
+    --vs-secondary-color: #166b01 !important;
+	--theme-color2: #f3ecdc !important;
+}
+form.header-search{
+	display:none !important;
+}
+.vs-icon{
+	    border: 1px solid white !important;
+}
+.team-img a {
+    display: block;
+    height: 100%;
+    margin-bottom: 20px !important;
+}
+.vs-icon i{
+	color:#fff !important;
+}
+.header-logo img{
+	    height: 120px;
+    width: 120px;
+    object-fit: contain;
+}
+.team-style1 .team-img{
+	height:300px !important;
+	margin-bottom:20px;
+}
+.team-style1 .team-img img{
+	height:100%;
+object-fit:cover;
+margin-bottom:20px;
+}
+.team-title {
+    margin-top: 15px !important;
+}
+.hero-layout2 .hero-item::after{
+	display:none !important;
+}
+.hero-layout2 .hero-item {
+    padding: 70px 0 70px !important;
+}
+.service-style1 {
+    background-color: var(--white-color);
+    height: 330px;
+}
+.img-box1 .img1,.img-box1 .box-inner img{
+	    height: 100% !important;
+    object-fit: cover;
+}
+ul#menu-main-menu-1 a{
+	color:#fff !important;
+}
+.header-layout1 .header-top {
+    background-color: #000000 !important;
+}
+.will-sticky .sticky-active {
+    background-color: #166b01  !important;
+}
+.footer-widget .sidebar-gallery a img {
+    height: 70px;
+    width: 100%;
+    object-fit: cover;
+}
+a#dropdownMenuLink {
+    display: none !important
+}
+
+@media (max-width: 1399px) {
+    .header-layout1 .header-bottom {
+        background-color: #166b01;
+    }
+}
+@media (max-width: 767px){
+	.header-layout1 .header-top {
+        display: none;
+	}.vs-menu-wrapper.vs-body-visible .vs-menu-area img{
+		    width: 100px;
+	}
+	.service-style1 {
+    height: 100%;
+}
+}
+.service-style1 {
+    margin-top: 0px !important;
+}
+
+/* ---- Overrides added after the migration ---- */
+
+/* Buttons (.vs-btn)
+   The theme flips two contrasting overlays in on the X and Y axes (an "X" shape).
+   Instead, a lighter shade of the button's own color wipes in from the right; on
+   mouse-out it keeps moving left as it retreats. The shade is a white layer over
+   the button's color: 10% white keeps cream text on the green buttons above 4.5:1
+   contrast (#166b01 -> #2d7a1a, 4.56:1). Cream buttons are already near white, so
+   their shade is solid white. Text keeps its resting color on hover. */
+.vs-btn::before {
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: rgba(255, 255, 255, 0.1) !important;
+  opacity: 1;
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.vs-btn::after {
+  display: none;
+}
+.vs-btn:hover::before,
+.vs-btn:focus-visible::before {
+  transform: scaleX(1);
+  transform-origin: right center;
+}
+
+/* cream quote-form button: lighter shade of cream = white */
+.form-style1 .vs-btn::before {
+  background: #ffffff !important;
+}
+/* dark green contact-form button keeps the 10% white shade; the theme also swaps
+   this button's own background to cream on hover, which would hide its cream text */
+.contact-layout2 .form-style1 .vs-btn::before {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+.contact-layout2 .form-style1 .vs-btn:hover,
+.contact-layout2 .form-style1 .vs-btn:focus-visible {
+  background-color: var(--theme-color);
+}
+
+/* keep each button's resting text color on hover (the theme's hover colors were
+   chosen for its contrasting overlays) */
+.vs-btn:hover,
+.vs-btn:focus-visible {
+  color: var(--body-color);
+}
+.form-style1 .vs-btn:hover,
+.form-style1 .vs-btn:focus-visible {
+  color: var(--title-color);
+}
+.contact-layout2 .form-style1 .vs-btn:hover,
+.contact-layout2 .form-style1 .vs-btn:focus-visible {
+  color: var(--theme-color2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vs-btn::before {
+    transition: none;
+  }
+}
+
+/* Accessibility (#54) */
+/* Links inside running text must be distinguishable without color (WCAG 1.4.1). */
+p a:not([class]),
+.accordion-body a:not([class]),
+.error-text a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+/* The progress ring's circle has class "progress", which picks up Bootstrap's
+   .progress background (#e9ecef). SVG ignores it, but contrast checkers read it as
+   the background of the white percentage text; the real background is the green button. */
+.back-to-top .progress-circle circle.progress {
+  background-color: transparent;
+}
+
+/* Mobile/tablet spacing (#60) */
+@media (max-width: 1199px) {
+  /* FAQ column stacks under the quote form: drop most of its 80-120px top padding */
+  .faq-layout1 .col-xl-6.space {
+    padding-top: 40px;
+  }
+}
+@media (max-width: 767px) {
+  /* smaller back-to-top button, tucked into the corner so it covers less text */
+  .back-to-top {
+    --back-to-top-size: 46px;
+    bottom: 16px;
+    right: 12px;
+  }
+}
+/* Team names were links (to the homepage) styled white; they're plain headings now */
+.team-content .team-title {
+  color: var(--white-color);
+}
+
+/* Quote form Message is a textarea (#59): match the dark pill inputs above it */
+.faq-layout1 .form-style1 textarea.form-control {
+  background-color: var(--theme-color);
+  color: var(--white-color);
+  border: 0;
+  border-radius: 24px;
+  min-height: 140px;
+  resize: vertical;
+}
+.faq-layout1 .form-style1 textarea.form-control::placeholder {
+  color: var(--white-color);
+  opacity: 1;
+}
+
+/* reCAPTCHA checkbox: Netlify replaces the inner div with Google's widget (an iframe that can't be
+   restyled). The panel around it matches each form's fields and centers it. Its height is
+   reserved (78px widget + padding) so the form doesn't jump when the widget loads. */
+.captcha-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 98px;
+  padding: 10px;
+}
+/* quote form: dark green panel like the message box */
+.faq-layout1 .captcha-box {
+  background-color: var(--theme-color);
+  border-radius: 24px;
+}
+/* contact form: cream panel with the inputs' thin green border */
+.contact-layout2 .captcha-box {
+  background-color: var(--body-color);
+  border: 1px solid var(--theme-color);
+  border-radius: 6px;
+}

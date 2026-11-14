@@ -1,0 +1,15 @@
+---
+// Landing pages (src/content/landing) and Resource posts (src/content/posts), one URL per file.
+import { getCollection, type CollectionEntry } from 'astro:content';
+import LandingPage from '../layouts/LandingPage.astro';
+import Post from '../layouts/Post.astro';
+
+export async function getStaticPaths() {
+  const landing = (await getCollection('landing')).map((entry) => ({ params: { slug: entry.id }, props: { landing: entry } }));
+  const posts = (await getCollection('posts')).map((entry) => ({ params: { slug: entry.id }, props: { post: entry } }));
+  return [...landing, ...posts];
+}
+
+const { landing, post } = Astro.props as { landing?: CollectionEntry<'landing'>; post?: CollectionEntry<'posts'> };
+---
+{landing ? <LandingPage entry={landing} /> : <Post entry={post!} />}
