@@ -61,7 +61,7 @@ Working with an experienced manufacturer ensures that pallets are designed accor
 
 ---
 
-![](/assets/img/2026/03/pallets.webp)
+![Stacks of wood pallets in the yard](/assets/img/2026/03/pallets.webp)
 
 ## Benefits of Working with a Local Pallet Manufacturer
 
@@ -87,7 +87,7 @@ Day Lumber focuses on delivering consistent, durable pallet solutions that meet 
 
 ---
 
-![](/assets/img/2025/07/team.jpg)
+![The Day Lumber crew with forklifts outside the shop](/assets/img/2025/07/team.jpg)
 
 ## Contact Day Lumber
 

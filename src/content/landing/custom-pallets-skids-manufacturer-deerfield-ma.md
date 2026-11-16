@@ -59,7 +59,7 @@ From standard wooden pallets to heavy-duty custom skids, businesses can access s
 
 ---
 
-![](/assets/img/2026/03/pallets.webp)
+![Stacks of wood pallets in the yard](/assets/img/2026/03/pallets.webp)
 
 ## Advantages of Choosing a Local Manufacturer
 
@@ -81,7 +81,7 @@ By investing in custom solutions, businesses can streamline logistics, reduce pr
 
 ---
 
-![](/assets/img/2025/07/team.jpg)
+![The Day Lumber crew with forklifts outside the shop](/assets/img/2025/07/team.jpg)
 
 ## Contact Day Lumber
 

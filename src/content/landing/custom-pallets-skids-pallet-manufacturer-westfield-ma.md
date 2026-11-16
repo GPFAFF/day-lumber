@@ -61,7 +61,7 @@ With knowledge of regional industries and logistics requirements, local manufact
 
 ---
 
-![](/assets/img/2026/03/pallets.webp)
+![Stacks of wood pallets in the yard](/assets/img/2026/03/pallets.webp)
 
 ## Supporting Westfield’s Industrial and Logistics Sector
 
@@ -83,7 +83,7 @@ These tailored solutions help businesses optimize logistics, reduce product dama
 
 ---
 
-![](/assets/img/2025/07/team.jpg)
+![The Day Lumber crew with forklifts outside the shop](/assets/img/2025/07/team.jpg)
 
 ## Contact Day Lumber
 

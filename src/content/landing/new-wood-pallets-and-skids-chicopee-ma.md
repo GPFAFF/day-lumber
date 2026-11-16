@@ -59,7 +59,7 @@ Heavy-duty skids provide additional strength for industrial equipment and oversi
 
 ---
 
-![](/assets/img/2026/03/pallets.webp)
+![Stacks of wood pallets in the yard](/assets/img/2026/03/pallets.webp)
 
 ## Supporting Chicopee Businesses with Reliable Supply
 
@@ -83,7 +83,7 @@ Day Lumber offers consultation services to help clients determine the best palle
 
 ---
 
-![](/assets/img/2025/07/team.jpg)
+![The Day Lumber crew with forklifts outside the shop](/assets/img/2025/07/team.jpg)
 
 ## Contact Day Lumber
 

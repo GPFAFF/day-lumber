@@ -57,7 +57,7 @@ By investing in well-built pallets, businesses can reduce the risk of product da
 
 ---
 
-![](/assets/img/2026/03/pallets.webp)
+![Stacks of wood pallets in the yard](/assets/img/2026/03/pallets.webp)
 
 ## Local Expertise with Reliable Service
 
@@ -77,7 +77,7 @@ Day Lumber uses wood from responsibly managed sources and focuses on producing d
 
 ---
 
-![](/assets/img/2025/07/team.jpg)
+![The Day Lumber crew with forklifts outside the shop](/assets/img/2025/07/team.jpg)
 
 ## Expert Consultation and Custom Solutions
 

@@ -91,7 +91,7 @@ Skids are ideal for transporting heavy machinery or oversized products. Their de
 
 ---
 
-![](/assets/img/2026/03/pallets.webp)
+![Stacks of wood pallets in the yard](/assets/img/2026/03/pallets.webp)
 
 ## Standard and Custom Pallet Sizes
 
