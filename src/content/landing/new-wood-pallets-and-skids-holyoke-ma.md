@@ -59,7 +59,7 @@ Custom wood pallets and skids are ideal for oversized products, heavy machinery,
 
 ---
 
-![](/assets/img/2026/03/pallets.webp)
+![Stacks of wood pallets in the yard](/assets/img/2026/03/pallets.webp)
 
 ## Benefits of Working with a Local Manufacturer
 
@@ -77,7 +77,7 @@ Day Lumber supports these industries by providing durable pallet solutions desig
 
 ---
 
-![](/assets/img/2025/07/team.jpg)
+![The Day Lumber crew with forklifts outside the shop](/assets/img/2025/07/team.jpg)
 
 ## Reliable Pallet Manufacturing and Supply
 

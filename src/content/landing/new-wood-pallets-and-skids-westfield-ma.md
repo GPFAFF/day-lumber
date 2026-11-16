@@ -81,7 +81,7 @@ Day Lumber focuses on delivering reliable pallet solutions that meet modern indu
 
 ---
 
-![](/assets/img/2025/07/team.jpg)
+![The Day Lumber crew with forklifts outside the shop](/assets/img/2025/07/team.jpg)
 
 ## Contact Day Lumber
 

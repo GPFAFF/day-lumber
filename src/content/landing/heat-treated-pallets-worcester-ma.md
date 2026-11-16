@@ -99,7 +99,7 @@ By providing heat treated and export-compliant pallets, Day Lumber supports comp
 
 ---
 
-![](/assets/img/2025/07/team.jpg)
+![The Day Lumber crew with forklifts outside the shop](/assets/img/2025/07/team.jpg)
 
 ## Contact Day Lumber
 

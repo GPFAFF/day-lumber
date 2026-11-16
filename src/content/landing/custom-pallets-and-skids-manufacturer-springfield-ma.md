@@ -63,7 +63,7 @@ Local manufacturers can respond quickly to urgent pallet needs, whether it is a 
 
 ---
 
-![](/assets/img/2026/03/pallets.webp)
+![Stacks of wood pallets in the yard](/assets/img/2026/03/pallets.webp)
 
 ## Supporting Springfield’s Local Industries
 
@@ -87,7 +87,7 @@ Day Lumber offers a range of pallet options, including standard shipping pallets
 
 ---
 
-![](/assets/img/2025/07/team.jpg)
+![The Day Lumber crew with forklifts outside the shop](/assets/img/2025/07/team.jpg)
 
 ## Long-Term Value for Logistics and Supply Chains
 

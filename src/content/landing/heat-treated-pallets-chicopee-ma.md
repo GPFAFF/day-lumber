@@ -59,7 +59,7 @@ These benefits make export-ready pallets an essential part of modern supply chai
 
 ---
 
-![](/assets/img/2026/03/pallets.webp)
+![Stacks of wood pallets in the yard](/assets/img/2026/03/pallets.webp)
 
 ## Custom Pallet Solutions for Export Needs
 
@@ -85,7 +85,7 @@ Warehousing and distribution centers use pallets to organize inventory, while fo
 
 ---
 
-![](/assets/img/2025/07/team.jpg)
+![The Day Lumber crew with forklifts outside the shop](/assets/img/2025/07/team.jpg)
 
 ## Contact Day Lumber
 

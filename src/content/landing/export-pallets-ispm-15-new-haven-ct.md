@@ -93,7 +93,7 @@ By providing reliable export pallet solutions, Day Lumber supports a wide range 
 
 ---
 
-![](/assets/img/2025/07/team.jpg)
+![The Day Lumber crew with forklifts outside the shop](/assets/img/2025/07/team.jpg)
 
 ## Contact Day Lumber
 

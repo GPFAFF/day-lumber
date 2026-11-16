@@ -61,7 +61,7 @@ These benefits make certified pallets an essential component of efficient and re
 
 ---
 
-![](/assets/img/2026/03/pallets.webp)
+![Stacks of wood pallets in the yard](/assets/img/2026/03/pallets.webp)
 
 ## Local Manufacturing and Reliable Supply in Westfield
 
@@ -83,7 +83,7 @@ Day Lumber works closely with businesses to provide tailored pallet solutions th
 
 ---
 
-![](/assets/img/2025/07/team.jpg)
+![The Day Lumber crew with forklifts outside the shop](/assets/img/2025/07/team.jpg)
 
 ## Contact Day Lumber
 

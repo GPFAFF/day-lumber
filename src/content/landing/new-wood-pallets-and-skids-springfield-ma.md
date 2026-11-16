@@ -83,7 +83,7 @@ Day Lumber continues to deliver dependable pallet manufacturing services for com
 
 ---
 
-![](/assets/img/2025/07/team.jpg)
+![The Day Lumber crew with forklifts outside the shop](/assets/img/2025/07/team.jpg)
 
 ## Contact Day Lumber
 

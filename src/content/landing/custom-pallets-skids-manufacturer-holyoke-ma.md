@@ -55,7 +55,7 @@ High-quality construction ensures durability, allowing pallets to handle heavy l
 
 ---
 
-![](/assets/img/2026/03/pallets.webp)
+![Stacks of wood pallets in the yard](/assets/img/2026/03/pallets.webp)
 
 ## Advantages of Working with a Local Manufacturer
 
@@ -73,7 +73,7 @@ Day Lumber supports local industries by providing durable pallet solutions desig
 
 ---
 
-![](/assets/img/2025/07/team.jpg)
+![The Day Lumber crew with forklifts outside the shop](/assets/img/2025/07/team.jpg)
 
 ## Custom Solutions for Every Business
 
