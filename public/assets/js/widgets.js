@@ -282,11 +282,14 @@
     // Homepage Resources carousel
     (function () {
         let $blogcarousel = $scope.find('.blog-carousel');
+        // Autoplay starts once the carousel scrolls into view, so visitors land on the newest
+        // post first instead of wherever it rotated to while they read the page above it.
+        let blogAutoplay = !!$blogcarousel.data('slick-autoplay');
         $blogcarousel.not('.slick-initialized').slick({
             dots: false,
             infinite: true,
             arrows: false,
-            autoplay: $blogcarousel.data('slick-autoplay'),
+            autoplay: false,
             autoplaySpeed: 6000,
             fade: false,
             speed: 1000,
@@ -318,8 +321,24 @@
             }
             ]
         });
-    
-    
+        if (blogAutoplay && $blogcarousel.length) {
+            let startBlogAutoplay = function () {
+                $blogcarousel.slick('slickSetOption', 'autoplay', true, false);
+                $blogcarousel.slick('slickPlay');
+            };
+            if ('IntersectionObserver' in window) {
+                let blogObserver = new IntersectionObserver(function (entries) {
+                    if (entries.some(function (e) { return e.isIntersecting; })) {
+                        blogObserver.disconnect();
+                        startBlogAutoplay();
+                    }
+                }, { threshold: 0.5 });
+                blogObserver.observe($blogcarousel[0]);
+            } else {
+                startBlogAutoplay();
+            }
+        }
+
     })();
   });
 })(jQuery);
