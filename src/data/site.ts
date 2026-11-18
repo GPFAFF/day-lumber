@@ -56,6 +56,22 @@ export const photos = {
 
 export const footerGallery = [photos.truck, photos.history, photos.family, photos.pallets, photos.crates, photos.viking];
 
+/** About page "Technology" slider (slick fade carousel), shown in this order. */
+const shop = (file: string, alt: string) => ({ src: `/assets/img/2026/11/day-lumber-${file}.webp`, alt });
+export const technologySlides = [
+  photos.truck,
+  shop('pallet-stacks-yard', 'Rows of banded wood pallets stacked in the Day Lumber yard'),
+  shop('pallet-stacks-yard-2', 'Tall stacks of new stringer pallets outside on a sunny day'),
+  shop('banded-lumber-bundles', 'Banded bundles of cut pallet boards ready for assembly'),
+  shop('pallet-production-floor', 'Day Lumber pallet production floor with automated machinery'),
+  shop('pallet-production-floor-2', 'Automated pallet machine and work stations on the shop floor'),
+  shop('crew-assembling-pallet', 'Two Day Lumber employees nailing together a wood pallet'),
+  shop('crew-lifting-pallet', 'Day Lumber crew lifting a finished pallet off the build table'),
+  shop('cutting-pallet-boards', 'Employee cutting pallet boards at a work table'),
+  shop('saw-station-lumber', 'Employee feeding lumber through a saw station'),
+  shop('sawmill-lumber-bundle', 'Bundle of rough lumber on the sawmill line'),
+];
+
 /** Gallery grid: one wide photo, four small, one wide (the theme's gallery-layout1). */
 export const gallery = [photos.truck, photos.pallets, photos.technology, photos.crates, photos.history, photos.viking];
 

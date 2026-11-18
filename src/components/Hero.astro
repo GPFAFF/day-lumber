@@ -10,6 +10,8 @@ interface Props {
   cta?: { label: string; href: string };
   /** 'large' for a short slogan (homepage); 'small' for a full sentence (landing pages). */
   taglineSize?: 'small' | 'large';
+  /** true: the eyebrow becomes the large <h1> and the heading a smaller line under it, in a full-width column so the h1 stays on one line on desktop (homepage). */
+  eyebrowIsH1?: boolean;
 }
 const {
   heading,
@@ -19,16 +21,26 @@ const {
   eyebrow = 'Day Lumber Company',
   background = '/assets/img/2026/03/pallets.webp',
   cta = { label: 'Contact Now', href: '/contact-us/' },
+  eyebrowIsH1 = false,
 } = Astro.props;
 ---
 <section class="hero-layout1" data-bg-src={background}>
   <div class="hero-item">
     <div class="container position-relative z-index">
       <div class="row">
-        <div class="col-lg-8 position-relative">
+        <div class:list={[eyebrowIsH1 ? 'col-12' : 'col-lg-8', 'position-relative']}>
           <div class="hero-content">
-            <div class="hero-subtitle wow animate__fadeInUp" data-wow-delay="0.30s">{eyebrow}</div>
-            <h1 class="hero-title wow animate__fadeInUp" data-wow-delay="0.50s">{heading}{highlight && <Fragment> <span class="title-highlight">{highlight}</span></Fragment>}</h1>
+            {eyebrowIsH1 ? (
+              <Fragment>
+                <h1 class="hero-title hero-title--brand wow animate__fadeInUp" data-wow-delay="0.30s">{eyebrow}</h1>
+                <div class="hero-title hero-title--secondary h1 wow animate__fadeInUp" data-wow-delay="0.50s">{heading}{highlight && <Fragment> <span class="title-highlight">{highlight}</span></Fragment>}</div>
+              </Fragment>
+            ) : (
+              <Fragment>
+                <div class="hero-subtitle wow animate__fadeInUp" data-wow-delay="0.30s">{eyebrow}</div>
+                <h1 class="hero-title wow animate__fadeInUp" data-wow-delay="0.50s">{heading}{highlight && <Fragment> <span class="title-highlight">{highlight}</span></Fragment>}</h1>
+              </Fragment>
+            )}
             {tagline && <p class:list={['hero-text wow animate__fadeInUp', { 'hero-text--small': taglineSize === 'small' }]} data-wow-delay="0.75s">{tagline}</p>}
             <a class="vs-btn wow animate__fadeInUp" data-wow-delay="0.95s" href={cta.href}>
               {cta.label}<i aria-hidden="true" class="fa-regular fa-arrow-right"></i>
@@ -42,6 +54,23 @@ const {
 </section>
 
 <style>
+  .hero-title.hero-title--brand {
+    margin-bottom: 16px;
+  }
+  @media (max-width: 767px) {
+    .hero-title.hero-title--brand {
+      margin-bottom: 28px;
+    }
+  }
+  /* Smaller screens keep the theme's 52px / 32px hero sizes. */
+  @media (min-width: 768px) {
+    .hero-title.hero-title--brand {
+      font-size: 60px;
+    }
+  }
+  .hero-title.hero-title--secondary {
+    font-size: 24px;
+  }
   .hero-text--small {
     font-size: 20px;
   }
