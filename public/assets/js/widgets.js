@@ -7,13 +7,14 @@
 
     // Stats band: count up when scrolled into view
     (function () {
-        // Function to animate the counters
+        // Runs on load as well as on scroll/resize, so a band already in view when the page
+        // opens (e.g. on phones, right under the hero) counts up without the visitor scrolling.
         var a = 0;
-        $(window).scroll(function () {
+        function startCountersInView() {
             var mediaCounter = $(".media-counter");
             if (mediaCounter.length > 0) {
                 var oTop = mediaCounter.offset().top - window.innerHeight;
-    
+
                 if (a == 0 && $(window).scrollTop() > oTop) {
                     $(".counter-number").each(function () {
                         var $this = $(this),
@@ -36,10 +37,13 @@
                         );
                     });
                     a = 1;
+                    $(window).off('scroll resize', startCountersInView);
                 }
             }
-        });
-    
+        }
+        $(window).on('scroll resize', startCountersInView);
+        startCountersInView();
+
         let $counterSlider = $scope.find('.counter-carousel');
         $counterSlider.not('.slick-initialized').slick({
             loop: false,

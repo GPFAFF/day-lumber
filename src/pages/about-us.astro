@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import PageBanner from '../components/PageBanner.astro';
 import AboutIntro from '../components/AboutIntro.astro';
-import { business, photos } from '../data/site';
+import { business, photos, technologySlides } from '../data/site';
 ---
 <Base
   title="About Us - Day Lumber"
@@ -47,7 +47,9 @@ import { business, photos } from '../data/site';
             </div>
             <div class="col-lg-6 position-relative">
               <div class="hero-imgs slider2 vsslider2" data-autoplay="true" data-fade="true">
-                <div class="hero-img"><img alt={photos.truck.alt} loading="lazy" src={photos.truck.src} /></div>
+                {technologySlides.map(({ src, alt }) => (
+                  <div class="hero-img"><img alt={alt} loading="lazy" src={src} /></div>
+                ))}
               </div>
             </div>
           </div>
